@@ -1,1 +1,1 @@
-web: gunicorn docume.wsgi
+web: gunicorn docume.wsgi:application
