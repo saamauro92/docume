@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DocPost, Comment
+from .models import DocPost, Comment, Profile
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -30,5 +30,8 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 
+@admin.register(Profile)
+class UserCustomAdmin(admin.ModelAdmin):
+    list_display = ('user', 'title', 'birth_date')
 
 
