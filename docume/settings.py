@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'docume',
+    'django_summernote',
+    'docuapp',
 ]
 
 MIDDLEWARE = [
