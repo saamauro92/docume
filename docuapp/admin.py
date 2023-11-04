@@ -32,6 +32,10 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Profile)
 class UserCustomAdmin(admin.ModelAdmin):
+    """
+    Defines admin for use profile
+    """
+    
     list_display = ('user', 'title', 'birth_date')
 
 
