@@ -1,6 +1,12 @@
+@import "./normalize.scss";
+
 
 body {
      background-color: #3E3E3E;
      font-family: Inter, sans-serif;
      color: #000;
+
+     h1 {
+          color: red;
+     }
 }
