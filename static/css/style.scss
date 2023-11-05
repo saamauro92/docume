@@ -1,12 +1,19 @@
 @import "./normalize.scss";
+@import "./colors.scss";
+
 
 
 body {
-     background-color: #3E3E3E;
-     font-family: Inter, sans-serif;
-     color: #000;
+  background-color: $body;
+  font-family: Inter, sans-serif;
+  color: $white;
+  .menuburguer {
+    display: none;
+  }
+}
 
-     h1 {
-          color: red;
-     }
+.container {
+     max-width: 1298px;
+     margin: 0 auto;
+     padding: 0 24px;
 }
