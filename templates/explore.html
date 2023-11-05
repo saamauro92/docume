@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+ {% block content %} 
+
+<div class="explore-page">
+
+  <h1 class="heading">LATEST</h1>
+
+  <section class="latest-container">
+
+    <div class="featured-cards">
+    {% for post in docpost_list %}
+      {% if forloop.counter <= 3 %}
+
+        <div class="latest-card">
+          <a href="" class="">
+              <div class="image-container">
+                {% if "placeholder" in post.featured_image.url %}
+                  <img  src="{{ post.image.url }}" alt="" />
+                {% else %}
+                  <img  src="{{ post.featured_image.url }}" alt="" />
+                {% endif %}
+              </div>
+              <p class="card-date">
+                {{ post.created_on }}
+              </p>
+                <h2 class="card-title">{{ post.title }}</h2>
+              </a>
+              </div>
+
+          {% endif %}
+          {% endfor %}
+        </div>
+
+
+    <h3>More</h3>
+
+    <div class="more-container">
+
+      {% for post in docpost_list %}
+        {% if forloop.counter >= 4 %}
+    
+        <div class="more-card">
+          <a href="" class=""">
+            <div class="intro">  
+                <h4 class="card-title">{{ post.title }}</h4>
+                <p class="card-text">{{ post.excerpt }}</p>
+                <p class="card-date ">
+                  {{ post.created_on }}
+                </p>
+                <p class="author">Author: {{ post.author }}</p>
+              </div>
+            </a>
+            <a href="" class="post-link">
+                <div class="image-container">
+                  {% if "placeholder" in post.featured_image.url %}
+                    <img src="{{ post.image.url }}" alt="" />
+                  {% else %}
+                    <img src="{{ post.featured_image.url }}" alt="" />
+                  {% endif %}                  
+                </div>
+
+                </a>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+
+  </section>
+
+
+</div>
+  
+
+{% endblock %}

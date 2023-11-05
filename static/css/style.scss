@@ -5,6 +5,11 @@ html {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: $white;
+}
+
 body {
   background-color: $body;
   font-family: Inter, sans-serif;
@@ -40,4 +45,68 @@ body {
   max-width: 1298px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+//----------------------------------- EXPLORE.html
+
+.explore-page {
+  .heading {
+    padding: 80px 0 40px 0;
+    text-align: center;
+  }
+
+  .latest-container {
+    display: flex;
+    flex-direction: column;
+
+    .featured-cards {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      .latest-card {
+        img {
+          width: 100%;
+        }
+
+        .card-title {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .more-container {
+      max-width: calc(150% / 2);
+      border: 1px solid $white;
+
+      .more-card {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        justify-content: space-around;
+        gap: 30px;
+
+        .image-container {
+          img {
+            width: 100%;
+          }
+        }
+
+        .card-title {
+          color: $white;
+          text-decoration: none;
+          font-size: 1.2rem;
+        }
+
+        .card-text {
+          color: $white;
+        }
+
+        .image-container {
+          max-width: 300px;
+        }
+      }
+    }
+  }
 }
