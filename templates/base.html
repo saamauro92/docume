@@ -1,0 +1,67 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DocuMe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% compress css %}
+  <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}" />
+{% endcompress %}
+ 
+</head>
+
+<body class="">
+
+    <!-- Navigation -->
+    <nav class=" ">
+        <div class="container  navbar">
+            <a class="" href="{% url 'home' %}">
+       <img src="{% static 'images/logo.png' %}" class="logo" alt="docume logo"/>
+       </a>
+
+            <div class="">
+                <ul>
+                    <li >
+                        <a aria-current="page" href="{% url 'explore' %}">Explore Docs</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/#">Favourites </a>
+                     </li>
+                    <li >
+                       {{  user.username }}
+                    </li>
+                    <li >
+                        <a class="nav-link" href="/#">Logout</a>
+                    </li>
+                    {% else %}
+
+                    <li class="login-button">
+                        <a href="#">Log in / Sign up</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="container g">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="container footer ">
+        <p class="">© Docume 2023. All Rights Reserved </p>
+    </footer>
+</body>
+
+</html>

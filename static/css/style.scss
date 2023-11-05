@@ -1,19 +1,43 @@
 @import "./normalize.scss";
 @import "./colors.scss";
 
-
+html {
+  height: 100%;
+}
 
 body {
   background-color: $body;
   font-family: Inter, sans-serif;
   color: $white;
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    align-items: center;
+
+    ul li {
+      display: inline;
+      list-style: none;
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+
+    .login-button a {
+      color: $primary;
+    }
+  }
+
   .menuburguer {
     display: none;
   }
 }
 
 .container {
-     max-width: 1298px;
-     margin: 0 auto;
-     padding: 0 24px;
+  max-width: 1298px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
