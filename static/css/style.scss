@@ -1,6 +1,6 @@
 @import "./colors";
 @import "./normalize";
-@import "./reset";
+
 
 // Media queries
 
@@ -41,6 +41,10 @@ html {
 a {
   text-decoration: none;
   color: $white;
+}
+
+h1, h2 {
+  font-weight: 500;
 }
 
 body {
@@ -86,6 +90,7 @@ body {
   .heading {
     padding: 80px 0 40px 0;
     text-align: center;
+    font-size: 3rem;
   }
 
   .latest-container {
@@ -111,14 +116,26 @@ body {
           width: 100%;
         }
 
-        .card-title {
-          color: $white;
-          text-decoration: none;
+        .text {
+          display: flex;
+          justify-content: space-between;
+
+          .card-title {
+            color: $white;
+            text-decoration: none;
+          }
         }
+
       }
     }
 
+    .subtitle {
+      margin-top: 80px;
+      font-size: 2rem;
+    }
+
     .more-container {
+      margin-top: 40px;
       max-width: calc(150% / 2);
       @include small-down {
         max-width: 100%;
@@ -140,19 +157,29 @@ body {
           }
         }
 
-        .card-title {
-          color: $white;
-          text-decoration: none;
-          font-size: 1.2rem;
+        .intro {
+
+          .card-title {
+            color: $white;
+            text-decoration: none;
+            font-size: 1.5rem;
+          }
+  
+          .card-text {
+            color: $white;
+          }
+
+          .card-bottom {
+            i {
+              all:unset;
+            }
+          }
+  
+          .image-container {
+            max-width: 300px;
+          }
         }
 
-        .card-text {
-          color: $white;
-        }
-
-        .image-container {
-          max-width: 300px;
-        }
       }
     }
   }
