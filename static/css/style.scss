@@ -1,8 +1,41 @@
-@import "./normalize.scss";
-@import "./colors.scss";
+@import "./colors";
+@import "./normalize";
+@import "./reset";
+
+// Media queries
+
+$small: 640px;
+$medium: 1024px;
+$large: 1300px;
+$xlarge: 1600px;
+
+@mixin small-down() {
+  @media screen and (max-width: $small) {
+    @content;
+  }
+}
+
+@mixin medium-down() {
+  @media screen and (max-width: $medium) {
+    @content;
+  }
+}
+
+@mixin large-down() {
+  @media screen and (max-width: $large) {
+    @content;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: none;
+}
 
 html {
-  height: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -65,6 +98,14 @@ body {
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
 
+      @include medium-down {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include small-down {
+        grid-template-columns: 100%;
+      }
+
       .latest-card {
         img {
           width: 100%;
@@ -79,13 +120,19 @@ body {
 
     .more-container {
       max-width: calc(150% / 2);
-      border: 1px solid $white;
+      @include small-down {
+        max-width: 100%;
+      }
 
       .more-card {
         display: grid;
         grid-template-columns: 1fr 0.5fr;
         justify-content: space-around;
         gap: 30px;
+
+        @include small-down {
+          grid-template-columns: 100%;
+        }
 
         .image-container {
           img {
