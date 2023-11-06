@@ -12,7 +12,7 @@
       {% if forloop.counter <= 3 %}
 
         <div class="latest-card">
-          <a href="" class="">
+          <a href="{% url 'docpost_detail' post.slug  %}" class="">
               <div class="image-container">
                 {% if "placeholder" in post.featured_image.url %}
                   <img  src="{{ post.image.url }}" alt="" />
@@ -42,7 +42,7 @@
         {% if forloop.counter >= 4 %}
     
         <div class="more-card">
-          <a href="" class="">
+          <a href="{% url 'docpost_detail' post.slug  %}" class="">
             <div class="intro">  
                 <h4 class="card-title">{{ post.title }}</h4>
                 <p class="card-text">{{ post.excerpt }}</p>
@@ -50,7 +50,7 @@
                 <p class="card-bottom">  {{ post.created_on }} by <i> {{ post.author }} </i> </p>
               </div>
             </a>
-            <a href="" class="post-link">
+            <a href="{% url 'docpost_detail' post.slug  %}" class="post-link">
                 <div class="image-container">
                   {% if "placeholder" in post.featured_image.url %}
                     <img src="{{ post.image.url }}" alt="" />
