@@ -40,13 +40,22 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-     "compressor",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    "compressor",
     'django_summernote',
     'docuapp',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'docume.urls'
@@ -125,6 +135,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#To prevent 500 errors during login and registration,
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 # Static files (CSS, JavaScript, Images)
