@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<section class="container">
+<section class="">
     <div class="">
         <h1 class="post-title">{{ docpost.title }}</h1>
         <p class="post-subtitle">{{ docpost.author }} | {{ docpost.created_on }}</p>
@@ -13,12 +13,31 @@
         <img src=" {{ post.featured_image.url }}" width="100%">
         {% endif %}
     </div>
-    <div class="container">
+
         <div class="card-body">
             <p class="card-text ">
                 {{ docpost.content | safe }}
             </p>
         </div>
+
+        <div class="comments">
+            <h3>Comments:</h3>
+            <div class="">
+
+                {% for comment in comments %}
+                <div class="comments">
+                    <p class="">
+                        {{ comment.name }}
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+
+                    {{ comment.body | linebreaks }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
 
 </section>
 
