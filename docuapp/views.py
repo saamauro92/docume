@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import DocPost
 
 class Home(generic.ListView): 
@@ -20,3 +20,35 @@ class DocPostList(generic.ListView):
     queryset = DocPost.objects.filter(status=1).order_by('-created_on')
     template_name = 'explore.html'
     paginate_by = 6
+
+
+class DocPostDetail(View):
+    """
+    Will use get method to view Docpost details
+    
+    """
+    def get(self, request, slug, *args, **kwargs):
+        queryset = DocPost.objects.filter(status=1)
+        docpost = get_object_or_404(queryset, slug=slug)
+        comments = docpost.comment.order_by('created_on')
+        liked = False
+        if docpost.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        return render(
+            request,
+            "docpost_detail.html",
+            {
+                "docpost": docpost,
+                "comments": comments,
+                "liked": liked
+            },
+        )
+
+
+
+
+
+
+
+    
