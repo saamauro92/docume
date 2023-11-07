@@ -30,7 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['docuapp.herokuapp.com', 'docume-6885a52f1f5c.herokuapp.com/', 'localhost']
+X_FRAME_OPTIONS = "SAMEORIGIN" 
+
+ALLOWED_HOSTS = ['docuapp.herokuapp.com', '127.0.0.1','docume-6885a52f1f5c.herokuapp.com', 'localhost']
 
 # Application definition
 
@@ -43,16 +45,18 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'cloudinary',
     "compressor",
     'django_summernote',
     'docuapp',
 ]
 
-SITE_ID = 1
+SITE_ID = 4
+
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
@@ -69,6 +73,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'docume.urls'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'EMAIL_AUTHENTICATION': True,
+          'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+	  'allauth.account.auth_backends.AuthenticationBackend',
+    ]
 
 TEMPLATES = [
     {
