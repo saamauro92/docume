@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import DocPost
+from .models import DocPost, Profile
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Home(generic.ListView): 
     """
@@ -44,6 +45,28 @@ class DocPostDetail(View):
                 "liked": liked
             },
         )
+
+
+class ProfileView(LoginRequiredMixin, View): 
+    """
+    Creates class that returns profile information
+    """
+    def get(self, request,  *args, **kwargs):
+        current_user = request.user
+        if current_user.is_authenticated:
+             queryset = Profile.objects.filter(user=request.user)
+             profile = get_object_or_404(queryset)
+             return render(request,
+                           'account/profile.html',
+                       {  
+                             "profile": profile
+                             }
+                           )
+
+
+
+
+
 
 
 
