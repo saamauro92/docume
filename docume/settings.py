@@ -183,6 +183,9 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
 
+# AVOIDS QUESTION > SURE TO LOGOUT ?
+ACCOUNT_LOGOUT_ON_GET = True
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
