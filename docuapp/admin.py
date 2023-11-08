@@ -10,7 +10,7 @@ class DocPostAdmin(SummernoteModelAdmin):
     """
     Defines the summernote field content in DocPost for the admin management
     """
-    list_display = ('title', 'slug', 'status', 'created_on', 'public')
+    list_display = ('title', 'author', 'slug', 'status', 'created_on', 'public')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug' : ('title',)}
     list_filter = ('status', 'created_on')
