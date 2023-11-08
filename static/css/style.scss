@@ -1,7 +1,6 @@
 @import "./colors";
 @import "./normalize";
 
-
 // Media queries
 
 $small: 640px;
@@ -43,7 +42,8 @@ a {
   color: $white;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 500;
 }
 
@@ -125,7 +125,6 @@ body {
             text-decoration: none;
           }
         }
-
       }
     }
 
@@ -158,29 +157,58 @@ body {
         }
 
         .intro {
-
           .card-title {
             color: $white;
             text-decoration: none;
             font-size: 1.5rem;
           }
-  
+
           .card-text {
             color: $white;
           }
 
           .card-bottom {
             i {
-              all:unset;
+              all: unset;
             }
           }
-  
+
           .image-container {
             max-width: 300px;
           }
         }
-
       }
+    }
+  }
+}
+
+//----------------------------------- PROFILE.html
+
+.profile-page {
+  padding-top: 80px;
+
+  /* Tabs styles */
+  .tab {
+    overflow: hidden;
+    button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      color: #ccc;
+      margin-right: 30px;
+
+      &.active {
+        border-bottom: 2px solid #ccc;
+      }
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
     }
   }
 }

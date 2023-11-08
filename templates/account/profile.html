@@ -1,17 +1,26 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container">
-  {% if user.is_authenticated %}
+<div class='profile-page'>
 
-  <h1>{{ profile.user }}</h1>
 
-  <img src="  {{ profile.image.url }}" width="100%" />
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Profile')" id="defaultOpen">Profile</button>
+    <button class="tablinks" onclick="openTab(event, 'Docs')">Docs</button>
+  </div>
 
-  <span> {{ profile.birth_date }} </span>
+  <div id="Profile" class="tabcontent">
+    <h1>{{ profile.user }}</h1>
+    <span> {{ profile.birth_date }} </span>
+    <p>{{ profile.bio }}</p>
+    <img src="  {{ profile.image.url }}" width="100%" />
+  </div>
+  
+  <div id="Docs" class="tabcontent">
+    <h3>Docs</h3>
+    
+  </div>
+  
 
-  <p>{{ profile.bio }}</p>
-
-  {% endif %}
 </div>
 
 {% endblock %}
