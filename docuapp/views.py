@@ -18,7 +18,7 @@ class DocPostList(generic.ListView):
     Creates explore page view with docposts
     """
     model = DocPost
-    queryset = DocPost.objects.filter(status=1).order_by('-created_on')
+    queryset = DocPost.objects.filter(status=1, public=True).order_by('-created_on')
     template_name = 'explore.html'
     paginate_by = 6
 
