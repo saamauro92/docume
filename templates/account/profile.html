@@ -28,6 +28,12 @@
 
    <a href="{% url 'docpost_detail' docpost.slug %}" aria-label="Will redirect to {{ docpost.title}}"> View</a>
 
+
+    <form action="{% url 'delete_docpost' docpost.id %}" method="post" onsubmit="deletePost()">
+      {% csrf_token %} 
+      <button type="submit">Delete Document</button>
+    </form>
+    <a onclick=""> </a>
     {% endfor %} {% endif %}
   </div>
 </div>
