@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
 from django.views import generic, View
 from .models import DocPost, Profile
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -67,6 +68,22 @@ class ProfileView(LoginRequiredMixin, View):
                           
                              }
                            )
+        
+
+
+class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
+    """
+    User authenticated can delete DocPost from their profile
+    Super() will give access to methods and properties of a the class parent
+    """
+    model = DocPost
+    success_url = reverse_lazy('view_profile')
+
+    def delete(self, request, *args, **kwargs):
+        return super(DeleteDocPost, self).delete(request, *args, kwargs)
+
+
+        
 
 
 
