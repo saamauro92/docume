@@ -1,10 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
-<div class='profile-page'>
-
-
+<div class="profile-page">
   <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Profile')" id="defaultOpen">Profile</button>
+    <button
+      class="tablinks"
+      onclick="openTab(event, 'Profile')"
+      id="defaultOpen">
+      Profile
+    </button>
     <button class="tablinks" onclick="openTab(event, 'Docs')">Docs</button>
   </div>
 
@@ -14,13 +17,19 @@
     <p>{{ profile.bio }}</p>
     <img src="  {{ profile.image.url }}" width="100%" />
   </div>
-  
-  <div id="Docs" class="tabcontent">
-    <h3>Docs</h3>
-    
-  </div>
-  
 
+  <div id="Docs" class="tabcontent">
+    {% if docposts %}
+     {% for docpost in docposts %}
+    <h3>{{ docpost.title }}</h3>
+
+    <p>{{ docpost.date }}</p>
+    <p>{{ docpost.excerpt }}</p>
+
+   <a href="{% url 'docpost_detail' docpost.slug %}" aria-label="Will redirect to {{ docpost.title}}"> View</a>
+
+    {% endfor %} {% endif %}
+  </div>
 </div>
 
 {% endblock %}

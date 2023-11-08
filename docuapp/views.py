@@ -56,10 +56,15 @@ class ProfileView(LoginRequiredMixin, View):
         if current_user.is_authenticated:
              queryset = Profile.objects.filter(user=request.user)
              profile = get_object_or_404(queryset)
+             posts = DocPost.objects.filter(author=request.user)
+  
+
              return render(request,
                            'account/profile.html',
                        {  
-                             "profile": profile
+                             "profile": profile,
+                              "docposts": posts,
+                          
                              }
                            )
 
