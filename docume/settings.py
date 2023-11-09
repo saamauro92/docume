@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['docuapp.herokuapp.com', '127.0.0.1','docume-6885a52f1f5c.herok
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -57,6 +59,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 4
 
+CRISPY_TEMPLATE_PACK = 'uni-form'
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"

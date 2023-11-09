@@ -14,15 +14,12 @@
   <div id="Profile" class="tabcontent">
     <h1>{{ profile.user }}</h1>
     <span> {{ profile.birth_date }} </span>
-    <p>{{ profile.bio }}</p>
+    {% autoescape off %}
+    <p>{{ profile.bio|safe }}</p>
+  {% endautoescape %}
     <img src="  {{ profile.image.url }}" width="100%" />
 
-
-        <!-- SUBMIT IMAGE FORM -->
-
         <a href="{% url 'update_profile' profile.user.id %}" > Update>></a>
-
-
 
   </div>
 
