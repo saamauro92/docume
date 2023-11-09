@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic, View
-from .models import DocPost, Profile
+from .models import DocPost, Profile, User
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import ProfilePicForm
 
 class Home(generic.ListView): 
     """
@@ -81,6 +82,33 @@ class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
 
     def delete(self, request, *args, **kwargs):
         return super(DeleteDocPost, self).delete(request, *args, kwargs)
+    
+
+
+
+class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
+    """
+    Authenticated user can update profile information
+    """
+    model = Profile
+    form_class = ProfilePicForm
+    template_name = 'account/update_profile.html'
+    success_url = reverse_lazy('view_profile')
+
+
+    def form_invalid(self, form):
+           form.instance.user = self.request.use
+           return super().form_valid(form)
+    
+    def get_object(self, queryset=None):
+          return self.request.user.profile
+
+
+
+
+
+  
+            
 
 
         

@@ -16,6 +16,14 @@
     <span> {{ profile.birth_date }} </span>
     <p>{{ profile.bio }}</p>
     <img src="  {{ profile.image.url }}" width="100%" />
+
+
+        <!-- SUBMIT IMAGE FORM -->
+
+        <a href="{% url 'update_profile' profile.user.id %}" > Update>></a>
+
+
+
   </div>
 
   <div id="Docs" class="tabcontent">
@@ -33,7 +41,7 @@
       {% csrf_token %} 
       <button type="submit">Delete Document</button>
     </form>
-    <a onclick=""> </a>
+
     {% endfor %} {% endif %}
   </div>
 </div>
