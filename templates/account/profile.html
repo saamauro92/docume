@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% block content %}
+{% load static %}
 
 <div class="profile-page">
   <div class="tab">
@@ -17,9 +18,14 @@
     {% autoescape off %}
     <p>{{ profile.bio|safe }}</p>
   {% endautoescape %}
-    <img src="  {{ profile.image.url }}" width="100%" />
 
-        <a href="{% url 'update_profile' profile.user.id %}" > Update>></a>
+  {% if profile.image %}
+    <img src="{{ profile.image.url }}" width="100%" />
+  {% else %}
+    <img src="{% static 'path/to/placeholder-image.jpg' %}" width="100%" />
+  {% endif %}
+
+        <a href="{% url 'update_profile' profile.user.id %}" > Update Profile >></a>
 
   </div>
 
