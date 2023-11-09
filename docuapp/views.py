@@ -97,7 +97,7 @@ class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
 
 
     def form_invalid(self, form):
-           form.instance.user = self.request.use
+           form.instance.user = self.request.user
            return super().form_valid(form)
     
     def get_object(self, queryset=None):
