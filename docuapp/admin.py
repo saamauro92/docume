@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import DocPost, Comment, Profile
 from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
 
 @admin.register(DocPost)
 

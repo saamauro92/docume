@@ -2,12 +2,18 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 from .models import Profile
 
+
 class ProfilePicForm(forms.ModelForm):
-    image = forms.ImageField(label="Profile Picture")
-    bio = forms.CharField(widget=SummernoteWidget(), label="Biography")
+    image = forms.ImageField(label="Profile Picture", required=False)
+    bio = forms.CharField(widget=SummernoteWidget(), label="Biography", required=False)
+    birth_date = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'}),required=False )
+    title = forms.CharField(label="Profession" ,required=False)
+    name = forms.CharField(label="Name", required=False)
+    email = forms.EmailField(label="Email", required=False)
+
     class Meta:
         model = Profile
-        fields = ('image', 'bio')
+        fields = ('name', 'email', 'birth_date', 'title', 'image', 'bio', )
 
 
 

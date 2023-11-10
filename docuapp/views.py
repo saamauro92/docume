@@ -69,8 +69,6 @@ class ProfileView(LoginRequiredMixin, View):
                           
                              }
                            )
-        
-
 
 class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
     """
@@ -82,9 +80,6 @@ class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
 
     def delete(self, request, *args, **kwargs):
         return super(DeleteDocPost, self).delete(request, *args, kwargs)
-    
-
-
 
 class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
     """
@@ -95,13 +90,20 @@ class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
     template_name = 'account/update_profile.html'
     success_url = reverse_lazy('view_profile')
 
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+    
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+
+        return self.render_to_response(self.get_context_data(form=form, object=self.object))
 
     def form_invalid(self, form):
            form.instance.user = self.request.user
            return super().form_valid(form)
     
-    def get_object(self, queryset=None):
-          return self.request.user.profile
+
 
 
 

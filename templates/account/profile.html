@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %} 
+{% extends "base.html" %} {% block content %}
 
 <div class="profile-page">
   <div class="tab">
@@ -13,13 +13,13 @@
 
   <div id="Profile" class="tabcontent">
     <h1>{{ profile.user }}</h1>
+    <p>{{ profile.name }}</p>
+    <p>{{ profile.email }}</p>
+    <p>{{ profile.title }}</p>
     <span> {{ profile.birth_date }} </span>
     {% autoescape off %}
     <p>{{ profile.bio|safe }}</p>
-    {% endautoescape %} 
-
-
-    {% if "placeholder" in profile.image.url %}
+    {% endautoescape %} {% if "placeholder" in profile.image.url %}
     <img
       src="https://res.cloudinary.com/dtycp96d8/image/upload/v1699567764/he7p20dklbt6lvtnmm38.png"
       width="100%" />
@@ -28,7 +28,6 @@
     {% endif %}
 
     <a href="{% url 'update_profile' profile.user.id %}"> Update Profile >></a>
-    
   </div>
 
   <div id="Docs" class="tabcontent">
