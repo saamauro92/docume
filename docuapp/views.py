@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from .models import DocPost, Profile, User
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import ProfilePicForm
+from .forms import ProfilePicForm, DocPostForm
 
 class Home(generic.ListView): 
     """
@@ -23,8 +23,7 @@ class DocPostList(generic.ListView):
     queryset = DocPost.objects.filter(status=1, public=True).order_by('-created_on')
     template_name = 'explore.html'
     paginate_by = 6
-
-
+    
 class DocPostDetail(View):
     """
     Will use get method to view Docpost details
@@ -48,6 +47,18 @@ class DocPostDetail(View):
             },
         )
 
+class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
+    """
+    User authenticated can delete DocPost from their profile
+    Super() will give access to methods and properties of a the class parent
+    """
+    model = DocPost
+    success_url = reverse_lazy('view_profile')
+
+    def delete(self, request, *args, **kwargs):
+        return super(DeleteDocPost, self).delete(request, *args, kwargs)
+    
+
 
 class ProfileView(LoginRequiredMixin, View): 
     """
@@ -69,17 +80,25 @@ class ProfileView(LoginRequiredMixin, View):
                           
                              }
                            )
-
-class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
+        
+class CreateDocPost(LoginRequiredMixin,generic.CreateView):
     """
-    User authenticated can delete DocPost from their profile
-    Super() will give access to methods and properties of a the class parent
+    Authenticated user can create a documentation post
     """
     model = DocPost
-    success_url = reverse_lazy('view_profile')
+    form_class = DocPostForm
+    template_name = 'create_post.html'
+    success_url = reverse_lazy('explore')  
 
-    def delete(self, request, *args, **kwargs):
-        return super(DeleteDocPost, self).delete(request, *args, kwargs)
+    def get_object(self, queryset=None):
+      return self.request.user
+    
+    def form_valid(self, form):
+        if self.request.user.is_authenticated:
+            form.instance.author = self.request.user
+            return super(CreateDocPost, self).form_valid(form)
+        else:
+            return render(self.request, 'account/login.html')
 
 class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
     """
@@ -94,10 +113,12 @@ class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
         return self.request.user.profile
     
     def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        form = self.get_form()
-
-        return self.render_to_response(self.get_context_data(form=form, object=self.object))
+            if self.request.user.is_authenticated:
+                self.object = self.get_object()
+                form = self.get_form()
+                return self.render_to_response(self.get_context_data(form=form, object=self.object))
+            else:
+                return render(self.request, 'account/login.html')
 
     def form_invalid(self, form):
            form.instance.user = self.request.user

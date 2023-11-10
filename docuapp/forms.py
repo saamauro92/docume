@@ -1,6 +1,6 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from .models import Profile
+from .models import Profile, DocPost
 
 
 class ProfilePicForm(forms.ModelForm):
@@ -17,5 +17,11 @@ class ProfilePicForm(forms.ModelForm):
 
 
 
+class DocPostForm(forms.ModelForm):
 
+    content = forms.CharField(widget=SummernoteWidget())
+
+    class Meta:
+        model = DocPost
+        fields = ('title',  'content', 'excerpt','featured_image',  'status','public')
 
