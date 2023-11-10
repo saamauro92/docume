@@ -35,11 +35,12 @@
   </div>
 
   <div id="Docs" class="tabcontent">
-  <h2> Create Post </h2>
+
+  <h2> UPDATE POST </h2>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create Post</button>
+    <button type="submit">Update Post</button>
 </form>
 
   </div>

@@ -25,3 +25,5 @@ class DocPostForm(forms.ModelForm):
         model = DocPost
         fields = ('title',  'content', 'excerpt','featured_image',  'status','public')
 
+
+

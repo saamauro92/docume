@@ -23,7 +23,7 @@ class DocPostList(generic.ListView):
     queryset = DocPost.objects.filter(status=1, public=True).order_by('-created_on')
     template_name = 'explore.html'
     paginate_by = 6
-    
+
 class DocPostDetail(View):
     """
     Will use get method to view Docpost details
@@ -97,6 +97,38 @@ class CreateDocPost(LoginRequiredMixin,generic.CreateView):
         if self.request.user.is_authenticated:
             form.instance.author = self.request.user
             return super(CreateDocPost, self).form_valid(form)
+        else:
+            return render(self.request, 'account/login.html')
+
+class UpdateDocPost(LoginRequiredMixin, generic.UpdateView):
+    """
+    Authenticated user can update a documentation post
+    """
+    model = DocPost
+    form_class = DocPostForm
+    template_name = 'update_docpost.html'
+    success_url = reverse_lazy('explore')
+
+    def get_object(self, queryset=None):
+        return self.model.objects.get(pk=self.kwargs['pk'])
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.get_object()
+        return kwargs
+
+    def get(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            self.object = self.get_object()
+            form = self.get_form()
+            return self.render_to_response(self.get_context_data(form=form, object=self.object))
+        else:
+            return render(self.request, 'account/login.html')
+
+    def form_valid(self, form):
+        if self.request.user.is_authenticated:
+            form.instance.author = self.request.user
+            return super(UpdateDocPost, self).form_valid(form)
         else:
             return render(self.request, 'account/login.html')
 

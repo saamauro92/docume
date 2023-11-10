@@ -49,6 +49,12 @@
       View</a
     >
 
+    <a
+      href="{% url 'update_docpost' docpost.id %}"
+      aria-label="Will redirect to {{ docpost.title}}">
+      Update Post</a
+    >
+
     <form
       action="{% url 'delete_docpost' docpost.id %}"
       method="post"

@@ -10,5 +10,5 @@ urlpatterns = [
     path('delete_docpost/<int:pk>', views.DeleteDocPost.as_view(), name='delete_docpost'),
     path('update_profile/<int:pk>', views.UpdateProfile.as_view(), name='update_profile'),
     path('create_post/', views.CreateDocPost.as_view(), name='create_post'),
-
+    path('update_docpost/<int:pk>', views.UpdateDocPost.as_view(), name='update_docpost'),
 ]
