@@ -101,6 +101,36 @@ body {
   padding: 0 24px;
 }
 
+.footer {
+  padding: 80px 20px;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    justify-items: start;
+
+    @include medium-down {
+      grid-template-columns: 100%;
+    }
+
+    .logo-text {
+      padding: 20px 0 40px 0;
+
+      p {
+        margin-top: 20px;
+        font-size: 1.4em;
+      }
+    }
+
+    .nav {
+      list-style: none;
+      li {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
 //----------------------------------- INDEX.html
 
 .homepage {

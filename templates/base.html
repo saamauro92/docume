@@ -1,77 +1,116 @@
-{% load compress %}
-{% load static %}
-{% load crispy_forms_tags %}
+{% load compress %} {% load static %} {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>DocuMe</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'django_summernote/summernote-bs4.css' %}">
-    <script type="text/javascript" src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'django_summernote/summernote-bs4.css' %}" />
+    <script
+      type="text/javascript"
+      src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% compress css %}
-  <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}" />
-{% endcompress %}
- 
-</head>
+    <link
+      rel="stylesheet"
+      type="text/x-scss"
+      href="{% static 'css/style.scss' %}" />
+    {% endcompress %}
+  </head>
 
-<body class="">
-
+  <body class="">
     <!-- Navigation -->
     <nav class=" ">
-        <div class="container  navbar">
-            <a class="" href="{% url 'home' %}">
-       <img src="{% static 'images/logo.png' %}" class="logo" alt="docume logo"/>
-       </a>
+      <div class="container navbar">
+        <a class="" href="{% url 'home' %}">
+          <img
+            src="{% static 'images/logo.png' %}"
+            class="logo"
+            alt="docume logo" />
+        </a>
 
-            <div class="">
-                <ul>
-                    <li >
-                        <a aria-current="page" href="{% url 'explore' %}">Explore Docs</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/#">Favourites </a>
-                     </li>
-                    <li >
-                       {{  user.username }}
-                    </li>
-                    <li >
-                        <a class="nav-link" href="{% url 'view_profile' %}">Account</a>
-                       
-                     </li>
-                    <li >
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
+        <div class="">
+          <ul>
+            <li>
+              <a aria-current="page" href="{% url 'explore' %}">Explore Docs</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/#">Favourites </a>
+            </li>
+            <li>{{ user.username }}</li>
+            <li>
+              <a class="nav-link" href="{% url 'view_profile' %}">Account</a>
+            </li>
+            <li>
+              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
 
-                    <li class="login-button">
-                        <a href="{% url 'account_login' %}">Log in / Sign up</a>
-                    </li>
-                    {% endif %}
-                </ul>
-
-            </div>
+            <li class="login-button">
+              <a href="{% url 'account_login' %}">Log in / Sign up</a>
+            </li>
+            {% endif %}
+          </ul>
         </div>
+      </div>
     </nav>
 
     <main class="">
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+      {% block content %}
+      <!-- Content Goes here -->
+      {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer class="container footer ">
-        <p class="">© Docume 2023. All Rights Reserved </p>
+    <footer class="container footer">
+      <div class="grid">
+        <div class="logo-text">
+          <img
+            src="{% static 'images/logo.png' %}"
+            class="logo"
+            alt="docume logo" />
+          <p class="">Share or Keep It Secret: Your Docs, Your Rules!</p>
+        </div>
+
+        <ul class="nav">
+          <li>
+            <a aria-current="page" href="{% url 'explore' %}">Explore Docs</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/#">Favourites </a>
+          </li>
+          <li>{{ user.username }}</li>
+          <li>
+            <a class="nav-link" href="{% url 'view_profile' %}">Account</a>
+          </li>
+          <li>
+            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+          </li>
+          {% else %}
+
+          <li class="login-button">
+            <a href="{% url 'account_login' %}">Log in / Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      <hr />
+
+      <p class="">© Docume 2023. All Rights Reserved</p>
     </footer>
 
-     <script src="{% static 'js/script.js' %}"></script>
-
-</body>
-
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
 </html>
