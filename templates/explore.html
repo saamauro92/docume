@@ -1,7 +1,7 @@
 {% extends "base.html" %}
  {% block content %} 
 
-<div class="explore-page">
+<div class="container explore-page">
 
   <h1 class="heading">Latest Docs</h1>
 
@@ -38,7 +38,7 @@
     <div class="more-container">
 
       {% for post in docpost_list %}
-        {% if forloop.counter >= 4 %}
+
     
         <div class="more-card">
           <a href="{% url 'docpost_detail' post.slug  %}" class="">
@@ -60,7 +60,7 @@
                 </a>
           </div>
 
-        {% endif %}
+
       {% endfor %}
 
   </section>
