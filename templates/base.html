@@ -46,14 +46,16 @@
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/#">Favourites </a>
+              <a aria-current="page" href="{% url 'favourites' %}"
+                >Favourites
+              </a>
             </li>
             <li>{{ user.username }}</li>
             <li>
-              <a class="nav-link" href="{% url 'view_profile' %}">Account</a>
+              <a href="{% url 'view_profile' %}">Account</a>
             </li>
             <li>
-              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+              <a href="{% url 'account_logout' %}">Logout</a>
             </li>
             {% else %}
 
@@ -89,14 +91,10 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/#">Favourites </a>
-          </li>
-          <li>{{ user.username }}</li>
-          <li>
-            <a class="nav-link" href="{% url 'view_profile' %}">Account</a>
+            <a aria-current="page" href="{% url 'favourites' %}">Favourites </a>
           </li>
           <li>
-            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            <a href="{% url 'view_profile' %}">Account</a>
           </li>
           {% else %}
 
