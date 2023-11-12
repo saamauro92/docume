@@ -70,7 +70,14 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     image = CloudinaryField('image', default='placeholder')
     title =  models.CharField(max_length=20, blank=True)
+    favourites = models.ManyToManyField(DocPost, related_name='favorited_by', blank=True)
 
+    def add_to_favorites(self, docpost):
+        if docpost.public:
+            self.favourites.add(docpost)
+
+    def remove_from_favorites(self, docpost):
+        self.favourites.remove(docpost)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

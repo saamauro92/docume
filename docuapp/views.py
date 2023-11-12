@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
 from .models import DocPost, Profile, User
@@ -155,6 +155,23 @@ class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
     def form_invalid(self, form):
            form.instance.user = self.request.user
            return super().form_valid(form)
+    
+
+
+class AddToFavoritesView(LoginRequiredMixin, generic.View):
+    """
+    Authenticated user will be able to add public docposts to favourites
+    """
+    def get(self, request, docpost_id):
+        docpost = get_object_or_404(DocPost, pk=docpost_id)
+
+        if request.user.is_authenticated:
+            if docpost.public:
+               profile = Profile.objects.filter(user=request.user).first()
+               if profile is not None:
+                    profile.add_to_favorites(docpost)
+
+        return redirect('explore')
     
 
 

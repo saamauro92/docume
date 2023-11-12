@@ -11,4 +11,5 @@ urlpatterns = [
     path('update_profile/<int:pk>', views.UpdateProfile.as_view(), name='update_profile'),
     path('create_post/', views.CreateDocPost.as_view(), name='create_post'),
     path('update_docpost/<int:pk>', views.UpdateDocPost.as_view(), name='update_docpost'),
+    path('add_to_favorites/<int:docpost_id>/', views.AddToFavoritesView.as_view(), name='add_to_favorites'),
 ]
