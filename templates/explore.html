@@ -12,16 +12,15 @@
       {% if forloop.counter <= 3 %}
 
         <div class="latest-card">
-          <a href="{% url 'docpost_detail' post.slug  %}" class="">
-              <div class="image-container">
+          <a href="{% url 'docpost_detail' post.slug  %}" class="latest-card-content">
                 {% if "placeholder" in post.featured_image.url %}
-                  <img  src="{{ post.image.url }}" alt="" />
+                  <img class="image"  src="{{ post.image.url }}" alt="" />
                 {% else %}
-                  <img  src="{{ post.featured_image.url }}" alt="" />
+                  <img class="image" src="{{ post.featured_image.url }}" alt="" />
                 {% endif %}
-              </div>
+           
               <div class="text">
-                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-title">{{ post.title }}</p>
                 <p class="card-date">
                   {{ post.created_on }}
                 </p>

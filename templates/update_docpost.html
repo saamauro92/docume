@@ -2,36 +2,11 @@
 
 
 <div class="profile-page">
-  <div class="tab">
-    <button
-      class="tablinks"
-      onclick="openTab(event, 'Profile')"
-      id="defaultOpen">
-      Profile
-    </button>
-    <button class="tablinks" id="docsTab" onclick="openTab(event, 'Docs')">Docs</button>
-  </div>
-
-  <div id="Profile" class="tabcontent">
-    <h1>{{ profile.user }}</h1>
-    <p>{{ profile.name }}</p>
-    <p>{{ profile.email }}</p>
-    <p>{{ profile.title }}</p>
-    <span> {{ profile.birth_date }} </span>
-    {% autoescape off %}
-    <p>{{ profile.bio|safe }}</p>
-    {% endautoescape %} {% if "placeholder" in profile.image.url %}
-    <img
-      src="https://res.cloudinary.com/dtycp96d8/image/upload/v1699567764/he7p20dklbt6lvtnmm38.png"
-      width="100%" />
-    {% else %}
-    <img src="{{ profile.image.url }}" width="100%" />
-    {% endif %}
-
-
-  </div>
-
-  <div id="Docs" class="tabcontent">
+  <nav class="tab">
+    <a href="{% url 'view_profile' %}">Profile</a>
+    <a href="{% url 'docs' %}">Docs</a>
+    <a href="{% url 'favourites' %}">Favourites</a>
+  </nav>
 
   <h2> UPDATE POST </h2>
   <form method="post" enctype="multipart/form-data">
@@ -40,7 +15,7 @@
     <button type="submit">Update Post</button>
 </form>
 
-  </div>
+
 </div>
 
 {% endblock %}
