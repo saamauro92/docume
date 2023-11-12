@@ -1,32 +1,57 @@
-{% extends "base.html" %} {% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 
 <section class="container homepage">
+  <section class="homebanner">
+    <div class="grid">
+      <div class="left-side">
+        <h1 class="title">Effortless & Flexible Writing for Everyone</h1>
+        <p class="text">
+          Capture, store, and access your notes and code easily. docuMe -
+          because your ideas deserve to be easily revisited."
+        </p>
 
-
-
-  <div class="grid">
-
-    <div class="left-side">
-      <h1 class="title">Effortless & Flexible Writing for Everyone</h1> 
-      <p class="text">Capture, store, and access your notes and code easily. docuMe - because your ideas deserve to be easily revisited." </p>
-  
-      <div class="buttons-container">
-        <a href="{% url 'account_login' %}" class="button">Login in / Sign Up</a>
-        <a href="" class="button">Explore Docs</a>
+        <div class="buttons-container">
+          <a href="{% url 'account_login' %}" class="button signup"
+            >Login in / Sign Up</a
+          >
+          <a href="{% url 'explore' %}" class="button">Explore Docs</a>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="{% static '/images/image-homebanner.png' %}" />
       </div>
     </div>
-    <div class="image-container">
+  </section>
 
-      <img src="{% static '/images/image-homebanner.png' %}"> 
+  <section class="featured-banner">
+    <h2 class="title">Store, Share & Repeat</h2>
+    <p class="text">
+      Save your snippets or any code to revisit later, and you can even publish
+      and share them with the world
+    </p>
+
+    <div class="featureds-container">
+      {% for post in docpost_list %} {% if forloop.counter <= 3 %}
+
+      <div class="feature-card">
+        <a
+          href="{% url 'docpost_detail' post.slug  %}"
+          class="latest-card-content">
+          {% if "placeholder" in post.featured_image.url %}
+          <img class="image" src="{{ post.image.url }}" alt="" />
+          {% else %}
+          <img class="image" src="{{ post.featured_image.url }}" alt="" />
+          {% endif %}
+
+          <div class="text">
+            <p class="card-title">{{ post.title }}</p>
+          </div>
+        </a>
+      </div>
+
+      {% endif %} {% endfor %}
     </div>
-
-
-  </div>
-    
-
-
-
+  </section>
 </section>
 
 {% endblock %}

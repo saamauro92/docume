@@ -45,6 +45,7 @@ a {
 h1,
 h2 {
   font-weight: 500;
+  margin: unset;
 }
 
 p {
@@ -104,32 +105,105 @@ body {
 
 .homepage {
   padding: 0;
+  .homebanner {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: end;
 
-  .grid {
-    padding-top: 120px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: end;
+      @include medium-down {
+        grid-template-columns: 100%;
+        gap: 40px;
+        justify-items: center;
+      }
+      @include medium-down {
+        padding-top: 100px;
+      }
+    }
 
-    @include medium-down {
-      grid-template-columns: 100%;
-      gap: 40px;
-      justify-items: center;
+    .left-side {
+      gap: 10px;
+
+      .title {
+        font-size: 3rem;
+        margin-bottom: 16px;
+      }
+
+      .text {
+        margin-bottom: 16px;
+      }
+      .signup {
+        color: $primary;
+      }
+
+      .buttons-container {
+        @include medium-down {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+
+
+        }
+
+        margin-top: 20px;
+      }
     }
   }
 
-  .left-side {
-    gap: 10px;
 
-    .buttons-container {
-      @include medium-down {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      margin-top: 20px;
+  .featured-banner {
+    .title {
+      font-size: 2.2rem;
+      text-align: center;
     }
+
+    .text {
+      margin: 16px 0 40px 0;
+      text-align: center;
+    }
+    .featureds-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include medium-down {
+        grid-template-columns: 100%;
+        justify-items: center;
+      }
+      gap: 50px;
+
+      .feature-card {
+        border-radius: 4px;
+        overflow: hidden;
+        .image {
+          width: 100%;
+          height: auto;
+          max-height: 400px;
+          min-height: 400px;
+          object-fit: cover;
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .card-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 0;
+          }
+          .card-date {
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
   }
 }
 
