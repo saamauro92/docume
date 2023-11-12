@@ -1,17 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="profile-page">
-  <div class="tab">
-    <button
-      class="tablinks"
-      onclick="openTab(event, 'Profile')"
-      id="defaultOpen">
-      Profile
-    </button>
-    <button class="tablinks" onclick="openTab(event, 'Docs')">Docs</button>
-  </div>
+  <nav class="tab">
+    <a href="{% url 'view_profile' %}">Profile</a>
+    <a href="{% url 'docs' %}">Docs</a>
+    <a href="/favourites">Favourites</a>
+  </nav>
 
-  <div id="Profile" class="tabcontent">
+  <section id="Profile">
     <h1>{{ profile.user }}</h1>
     <p>{{ profile.name }}</p>
     <p>{{ profile.email }}</p>
@@ -28,43 +24,7 @@
     {% endif %}
 
     <a href="{% url 'update_profile' profile.user.id %}"> Update Profile >></a>
-  </div>
-
-
-  <div id="Docs" class="tabcontent">
-    <div>
-
-      <a href="{% url 'create_post'  %}">       + Create Post  </a>
-
-    </div>
-    {% if docposts %} {% for docpost in docposts %}
-    <h3>{{ docpost.title }}</h3>
-
-    <p>{{ docpost.date }}</p>
-    <p>{{ docpost.excerpt }}</p>
-
-    <a
-      href="{% url 'docpost_detail' docpost.slug %}"
-      aria-label="Will redirect to {{ docpost.title}}">
-      View</a
-    >
-
-    <a
-      href="{% url 'update_docpost' docpost.id %}"
-      aria-label="Will redirect to {{ docpost.title}}">
-      Update Post</a
-    >
-
-    <form
-      action="{% url 'delete_docpost' docpost.id %}"
-      method="post"
-      onsubmit="deletePost()">
-      {% csrf_token %}
-      <button type="submit">Delete Document</button>
-    </form>
-
-    {% endfor %} {% endif %}
-  </div>
+  </section>
 </div>
 
 {% endblock %}

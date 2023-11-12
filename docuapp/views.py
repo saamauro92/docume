@@ -62,7 +62,7 @@ class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
 
 class ProfileView(LoginRequiredMixin, View): 
     """
-    Creates class that returns profile information
+    Class that returns profile information
     """
     def get(self, request,  *args, **kwargs):
         current_user = request.user
@@ -80,6 +80,27 @@ class ProfileView(LoginRequiredMixin, View):
                           
                              }
                            )
+        
+class ProfileDocsView(LoginRequiredMixin, View): 
+    """
+    Class that returns docs information
+    """
+    def get(self, request,  *args, **kwargs):
+        current_user = request.user
+        if current_user.is_authenticated:
+             queryset = Profile.objects.filter(user=request.user)
+             posts = DocPost.objects.filter(author=request.user)
+  
+
+             return render(request,
+                           'account/docs.html',
+                       {  
+                              "docposts": posts,
+                          
+                             }
+                           )
+        
+
         
 class CreateDocPost(LoginRequiredMixin,generic.CreateView):
     """
