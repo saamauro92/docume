@@ -106,7 +106,7 @@ body {
 .homepage {
   padding: 0;
   .homebanner {
-    min-height: 85vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,15 +145,11 @@ body {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
-
-
         }
-
         margin-top: 20px;
       }
     }
   }
-
 
   .featured-banner {
     .title {
@@ -203,7 +199,24 @@ body {
         }
       }
     }
+  }
 
+  .call-to-action {
+    margin-top: 80px;
+    padding: 80px 0;
+    text-align: center;
+    background-color: $secondary;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 300;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    a {
+      padding: 14px 36px;
+    }
   }
 }
 
