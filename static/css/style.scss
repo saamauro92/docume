@@ -182,6 +182,9 @@ body {
   }
 
   .featured-banner {
+    @include medium-down {
+      margin-top: 120px;
+    }
     .title {
       font-size: 2.2rem;
       text-align: center;
