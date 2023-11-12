@@ -4,9 +4,10 @@
     <div class="">
         <h1 class="post-title">{{ docpost.title }}</h1>
         <p class="post-subtitle">{{ docpost.author }} | {{ docpost.created_on }}</p>
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated and docpost.author != user and docpost.public %}
         <a href="{% url 'add_to_favorites' docpost.id %}">Add to Favorites</a>
-    {% endif %}
+          {% endif %}
+    
 
     </div>
 

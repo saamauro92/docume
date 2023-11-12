@@ -166,7 +166,7 @@ class AddToFavoritesView(LoginRequiredMixin, generic.View):
         docpost = get_object_or_404(DocPost, pk=docpost_id)
 
         if request.user.is_authenticated:
-            if docpost.public:
+             if docpost.public and docpost.owner != request.user:
                profile = Profile.objects.filter(user=request.user).first()
                if profile is not None:
                     profile.add_to_favorites(docpost)
