@@ -82,10 +82,64 @@ body {
   }
 }
 
+.button {
+  display: inline-block;
+  padding: 14px 16px;
+  background-color: $secondary2;
+  transition: 0.2s ease all;
+  border-radius: 4px;
+  text-align: center;
+  &:hover {
+    background-color: darken($secondary2, 3);
+  }
+}
+
 .container {
   max-width: 1298px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+//----------------------------------- INDEX.html
+
+.homepage {
+  padding: 0;
+
+  .grid {
+    padding-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+
+    @include medium-down {
+      grid-template-columns: 100%;
+      gap: 40px;
+      justify-items: center;
+    }
+  }
+
+  .left-side {
+    gap: 10px;
+
+    .buttons-container {
+      @include medium-down {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      margin-top: 20px;
+    }
+  }
+}
+
+.image-container {
+  align-self: flex-end;
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
 }
 
 //----------------------------------- EXPLORE.html

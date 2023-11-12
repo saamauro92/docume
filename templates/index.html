@@ -1,10 +1,32 @@
 {% extends "base.html" %} {% block content %}
+{% load static %}
+
+<section class="container homepage">
 
 
-<div class="container">
+
+  <div class="grid">
+
+    <div class="left-side">
+      <h1 class="title">Effortless & Flexible Writing for Everyone</h1> 
+      <p class="text">Capture, store, and access your notes and code easily. docuMe - because your ideas deserve to be easily revisited." </p>
+  
+      <div class="buttons-container">
+        <a href="{% url 'account_login' %}" class="button">Login in / Sign Up</a>
+        <a href="" class="button">Explore Docs</a>
+      </div>
+    </div>
+    <div class="image-container">
+
+      <img src="{% static '/images/image-homebanner.png' %}"> 
+    </div>
+
+
+  </div>
     
-  <h1>HOME</h1>
 
-</div>
+
+
+</section>
 
 {% endblock %}
