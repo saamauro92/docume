@@ -177,8 +177,6 @@ class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
            form.instance.user = self.request.user
            return super().form_valid(form)
     
-
-
 class AddToFavoritesView(LoginRequiredMixin, generic.View):
     """
     Authenticated user will be able to add public docposts to favourites
@@ -187,16 +185,30 @@ class AddToFavoritesView(LoginRequiredMixin, generic.View):
         docpost = get_object_or_404(DocPost, pk=docpost_id)
 
         if request.user.is_authenticated:
-             if docpost.public and docpost.owner != request.user:
+             if docpost.public and docpost.author != request.user:
                profile = Profile.objects.filter(user=request.user).first()
                if profile is not None:
                     profile.add_to_favorites(docpost)
 
-        return redirect('explore')
+        return redirect('favourites')
     
 
 
 
+class ProfileFavouritesView(LoginRequiredMixin, generic.ListView):
+    """
+    Explore list of favourites
+    """
+    model = Profile
+    template_name = 'account/favourites.html'
+    context_object_name = 'favourites'
+
+    def get_queryset(self):
+        current_user = self.request.user
+        if current_user.is_authenticated:
+            profile = get_object_or_404(Profile, user=current_user)
+            return profile.favourites.all()
+        return []
 
 
 
