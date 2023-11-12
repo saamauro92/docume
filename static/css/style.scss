@@ -47,6 +47,10 @@ h2 {
   font-weight: 500;
 }
 
+p {
+  margin: unset;
+}
+
 body {
   background-color: $body;
   font-family: Inter, sans-serif;
@@ -87,21 +91,48 @@ body {
 //----------------------------------- EXPLORE.html
 
 .explore-page {
+  padding: 60px 0 40px 0;
   .heading {
-    padding: 80px 0 40px 0;
     text-align: center;
     font-size: 3rem;
   }
-
   .latest-container {
     display: flex;
     flex-direction: column;
 
     .featured-cards {
       display: grid;
-      justify-content: space-between;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+
+      .latest-card {
+        border-radius: 4px;
+        overflow: hidden;
+        .image {
+          width: 100%;
+          height: auto;
+          max-height: 200px;
+          min-height: 200px;
+          object-fit: cover;
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .card-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 0;
+          }
+          .card-date {
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.8;
+          }
+        }
+      }
 
       @include medium-down {
         grid-template-columns: repeat(2, 1fr);
@@ -109,22 +140,7 @@ body {
 
       @include small-down {
         grid-template-columns: 100%;
-      }
-
-      .latest-card {
-        img {
-          width: 100%;
-        }
-
-        .text {
-          display: flex;
-          justify-content: space-between;
-
-          .card-title {
-            color: $white;
-            text-decoration: none;
-          }
-        }
+        padding: 0px;
       }
     }
 
@@ -134,7 +150,6 @@ body {
     }
 
     .more-container {
-      margin-top: 40px;
       max-width: calc(150% / 2);
       @include small-down {
         max-width: 100%;
@@ -145,6 +160,14 @@ body {
         grid-template-columns: 1fr 0.5fr;
         justify-content: space-around;
         gap: 30px;
+        margin-bottom: 15px;
+        transition: 0.2s ease all;
+        background-color: darken($body, 5);
+        border-radius: 8px;
+        padding: 10px;
+        &:hover {
+          background-color: darken($body, 3);
+        }
 
         @include small-down {
           grid-template-columns: 100%;
@@ -153,6 +176,11 @@ body {
         .image-container {
           img {
             width: 100%;
+            height: auto;
+            max-height: 200px;
+            min-height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
           }
         }
 
@@ -161,13 +189,17 @@ body {
             color: $white;
             text-decoration: none;
             font-size: 1.5rem;
+            margin-bottom: 1rem;
           }
 
           .card-text {
             color: $white;
+            margin-bottom: 1rem;
+            opacity: 0.8;
           }
 
           .card-bottom {
+            opacity: 0.8;
             i {
               all: unset;
             }

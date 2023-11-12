@@ -128,7 +128,7 @@ class UpdateDocPost(LoginRequiredMixin, generic.UpdateView):
     model = DocPost
     form_class = DocPostForm
     template_name = 'update_docpost.html'
-    success_url = reverse_lazy('explore')
+    success_url = reverse_lazy('docs')
 
     def get_object(self, queryset=None):
         return self.model.objects.get(pk=self.kwargs['pk'])
@@ -191,9 +191,6 @@ class AddToFavoritesView(LoginRequiredMixin, generic.View):
                     profile.add_to_favorites(docpost)
 
         return redirect('favourites')
-    
-
-
 
 class ProfileFavouritesView(LoginRequiredMixin, generic.ListView):
     """
