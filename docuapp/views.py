@@ -53,7 +53,7 @@ class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
     Super() will give access to methods and properties of a the class parent
     """
     model = DocPost
-    success_url = reverse_lazy('view_profile')
+    success_url = reverse_lazy('docs')
 
     def delete(self, request, *args, **kwargs):
         return super(DeleteDocPost, self).delete(request, *args, kwargs)
@@ -109,7 +109,7 @@ class CreateDocPost(LoginRequiredMixin,generic.CreateView):
     model = DocPost
     form_class = DocPostForm
     template_name = 'create_post.html'
-    success_url = reverse_lazy('explore')  
+    success_url = reverse_lazy('docs')  
 
     def get_object(self, queryset=None):
       return self.request.user
