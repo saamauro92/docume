@@ -563,3 +563,31 @@ body {
     }
   }
 }
+
+
+
+//----------------------------------- docpost_detail.html
+
+
+.detail-page {
+  padding: 60px 0 40px 0; 
+
+  .header {
+    margin-bottom: 60px;
+    .post-title,.post-subtitle {
+      text-align: center;
+    }
+
+    .post-title {
+      font-size: 3rem;
+    }
+
+    .post-subtitle {
+      margin-top: 15px;
+      opacity: 0.8;
+
+    }
+  }
+
+
+}
