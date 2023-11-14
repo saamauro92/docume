@@ -30,43 +30,71 @@
 
   <body class="">
     <!-- Navigation -->
-    <nav class=" ">
-      <div class="container navbar">
-        <a class="" href="{% url 'home' %}">
-          <img
-            src="{% static 'images/logo.png' %}"
-            class="logo"
-            alt="docume logo" />
-        </a>
 
-        <div class="">
-          <ul>
-            <li>
-              <a aria-current="page" href="{% url 'explore' %}">Explore Docs</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a aria-current="page" href="{% url 'favourites' %}"
-                >Favourites
-              </a>
-            </li>
-            <li>{{ user.username }}</li>
-            <li>
-              <a href="{% url 'view_profile' %}">Account</a>
-            </li>
-            <li>
-              <a href="{% url 'account_logout' %}">Logout</a>
-            </li>
-            {% else %}
+    <div class="navbar-container container">
+      <a class="" href="{% url 'home' %}">
+        <img
+          src="{% static 'images/logo.png' %}"
+          class="logo"
+          alt="docume logo" />
+      </a>
 
-            <li class="login-button">
-              <a href="{% url 'account_login' %}">Log in / Sign up</a>
-            </li>
-            {% endif %}
-          </ul>
+      <nav class="mainNavbar" aria-label="Main">
+        <ul>
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-label="menu burguer"
+            className="close-button"
+            onclick="toggleMenu()"
+            tabindex="">
+            <div>X</div>
+          </button>
+          <li>
+            <a href="{% url 'explore' %}">Explore Docs</a>
+          </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav-item has-submenu">
+            <a href="#" aria-expanded="false">
+              {{ user.username }}
+              <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="#FFF"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+
+            <ul>
+              <li><a href="{% url 'favourites' %}">Favourites</a></li>
+              <li><a href="{% url 'view_profile' %}">Account</a></li>
+              <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li class="login-button">
+            <a href="{% url 'account_login' %}">Log in / Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+
+      <button
+        type="button"
+        aria-expanded="false"
+        aria-label="menu burguer"
+        className="menu-button"
+        onclick="toggleMenu()">
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </div>
-    </nav>
+      </button>
+    </div>
 
     <main class="">
       {% block content %}
@@ -109,6 +137,6 @@
       <p class="">© Docume 2023. All Rights Reserved</p>
     </footer>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static '/js/script.js' %}"></script>
   </body>
 </html>
