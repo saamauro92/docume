@@ -1,27 +1,18 @@
 {% extends "base.html" %} {% block content %}
 
 
-<div class="profile-page container">
-  <nav class="secondary-navbar">
-    <ul>
-      <li><a href="{% url 'view_profile' %}">Profile</a></li>
-      <li>
-        <a href="{% url 'docs' %}">Docs</a>
-      </li>
-      <li>
-        <a href="{% url 'favourites' %}">Favourites</a>
-      </li>
-    </ul>
-  </nav>
-
+<section class="container">
   <h2> UPDATE POST </h2>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Update Post</button>
-</form>
+  </form>
+
+  <a href="{% url 'docs' %}" aria-label="Redirect to users Docs">Back to Docs</a>
+</section>
 
 
-</div>
+
 
 {% endblock %}
