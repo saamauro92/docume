@@ -60,7 +60,12 @@
   <section class="call-to-action">
     <div class="container">
       <h4 class="title">Advance Your Code Journey: Save, Share, Elevate</h4>
+      {% if user.is_authenticated != True %}
       <a href="{% url 'account_login' %}" class="button signup"> Sign Up</a>
+      {% else %}
+      <a href="{% url 'create_post' %}" class="button signup"> Create Doc</a>
+
+      {% endif %}
     </div>
   </section>
 </section>
