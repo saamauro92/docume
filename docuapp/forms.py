@@ -23,7 +23,7 @@ class DocPostForm(forms.ModelForm):
 
     class Meta:
         model = DocPost
-        fields = ('title',  'content', 'excerpt','featured_image',  'status','public')
+        fields = ('title', 'excerpt', 'featured_image', 'content', 'status','public')
 
 
 
