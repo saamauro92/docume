@@ -109,6 +109,13 @@ body {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+.back-button {
+  padding-top: 40px;
+  text-decoration: underline;
+}
+
+
 //----------------------------------- BASE.html
 // https://www.w3.org/WAI/tutorials/menus/flyout
 
@@ -674,6 +681,7 @@ form {
   h1 {
     margin-bottom: 20px;
   }
+
 }
 
 //----------------------------------- DOCPOST_DETAIL.html
