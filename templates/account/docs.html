@@ -3,15 +3,16 @@
 <div class="profile-page container">
   <nav class="secondary-navbar">
     <ul>
-      <li><a href="{% url 'view_profile' %}">Profile</a></li>
+      <li><a href="{% url 'view_profile' %}"  aria-label="Redirect to users profile">Profile</a></li>
       <li>
-        <a href="{% url 'docs' %}">Docs</a>
+        <a href="{% url 'docs' %}" class="active" aria-label="Redirect to users Docs">Docs</a>
       </li>
       <li>
-        <a href="{% url 'favourites' %}">Favourites</a>
+        <a href="{% url 'favourites' %}" aria-label="Redirect to users Favourites">Favourites</a>
       </li>
     </ul>
   </nav>
+
 
   <section>
     <div>

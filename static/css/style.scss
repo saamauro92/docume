@@ -539,9 +539,7 @@ body {
   padding-top: 80px;
 
   .secondary-navbar {
-
     display: grid;
-  //  grid-template-columns: 8fr 4fr;
     align-items: center;
 
     ul {
@@ -550,10 +548,12 @@ body {
     ul li {
       display: inline;
       list-style: none;
-    
       a {
         text-decoration: none;
         color: $white;
+        &.active {
+          border-bottom: 2px solid #ccc;
+        }
       }
     }
 
@@ -561,30 +561,17 @@ body {
       color: $primary;
     }
   }
-
-  /* Tabs styles */
-  a {
-
-
-      &.active {
-        border-bottom: 2px solid #ccc;
-      }
-    }
-
-  
 }
-
-
 
 //----------------------------------- docpost_detail.html
 
-
 .detail-page {
-  padding: 60px 0 40px 0; 
+  padding: 60px 0 40px 0;
 
   .header {
     margin-bottom: 60px;
-    .post-title,.post-subtitle {
+    .post-title,
+    .post-subtitle {
       text-align: center;
     }
 
@@ -595,9 +582,6 @@ body {
     .post-subtitle {
       margin-top: 15px;
       opacity: 0.8;
-
     }
   }
-
-
 }
