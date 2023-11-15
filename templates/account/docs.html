@@ -7,11 +7,16 @@
         <a
           href="{% url 'view_profile' %}"
           aria-label="Redirect to users profile"
-          ><i class="far fa-id-card"></i>Profile </a
-        >
+          ><i class="far fa-id-card"></i>Profile
+        </a>
       </li>
       <li>
-        <a href="{% url 'docs' %}" class="active" aria-label="Redirect to users Docs"> <i class="fas fa-code"></i>Docs</a>
+        <a
+          href="{% url 'docs' %}"
+          class="active"
+          aria-label="Redirect to users Docs">
+          <i class="fas fa-code"></i>Docs</a
+        >
       </li>
       <li>
         <a
@@ -23,38 +28,45 @@
     </ul>
   </nav>
 
-
-  <section>
+  <section class="docs-page">
     <div>
-      <a href="{% url 'create_post'  %}"> + Create Post </a>
+      <a href="{% url 'create_post'  %}" class="create-button button">
+        <i class="fas fa-plus-circle"></i> Create Post
+      </a>
     </div>
-    {% if docposts %} {% for docpost in docposts %}
-    <h3>{{ docpost.title }}</h3>
 
-    <p>{{ docpost.date }}</p>
-    <p>{{ docpost.excerpt }}</p>
+    <div class="docs-list">
+      {% if docposts %} {% for docpost in docposts %}
+      <article class="docpost-card">
+        <div class="content">
+          <h3>{{ docpost.title }}</h3>
+          <p>{{ docpost.excerpt }}</p>
+        </div>
+        <div class="actions">
+          {% if docpost.public and docpost.status == 1 %} {# Assuming 1 is the Published status #}
+          <a href="{% url 'docpost_detail' docpost.slug %}" aria-label="Will redirect to {{ docpost.title }}" class="button">
+              View
+          </a>
+      {% endif %}
+          <a
+            href="{% url 'update_docpost' docpost.id %}"
+            aria-label="Will redirect to {{ docpost.title}}"
+            class="button"
+            >
+            <i class="far fa-edit"></i> </a
+          >
 
-    <a
-      href="{% url 'docpost_detail' docpost.slug %}"
-      aria-label="Will redirect to {{ docpost.title}}">
-      View</a
-    >
-
-    <a
-      href="{% url 'update_docpost' docpost.id %}"
-      aria-label="Will redirect to {{ docpost.title}}">
-      Update Post</a
-    >
-
-    <form
-      action="{% url 'delete_docpost' docpost.id %}"
-      method="post"
-      onsubmit="deletePost()">
-      {% csrf_token %}
-      <button type="submit">Delete Document</button>
-    </form>
-
-    {% endfor %} {% endif %}
+          <form
+            action="{% url 'delete_docpost' docpost.id %}"
+            method="post"
+            onsubmit="deletePost()">
+            {% csrf_token %}
+            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+          </form>
+        </div>
+      </article>
+      {% endfor %} {% endif %}
+    </div>
   </section>
 </div>
 
