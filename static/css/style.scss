@@ -324,6 +324,23 @@ form {
     flex-direction: column;
     gap: 10px;
   }
+  button[type=submit] {
+    color: $white;
+    font-weight: 500;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 14px 16px;
+    background-color: $secondary2;
+    transition: 0.2s ease all;
+    border-radius: 4px;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($secondary2, 3);
+    }
+  }
 }
 
 //----------------------------------- INDEX.html
@@ -706,3 +723,14 @@ form {
     }
   }
 }
+
+
+//----------------------------------- CREATE_POST.html
+
+
+.create-post {
+  padding-top: 40px;
+
+
+}
+
