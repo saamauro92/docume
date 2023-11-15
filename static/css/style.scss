@@ -174,13 +174,23 @@ body {
 .mainNavbar li {
   position: relative;
   margin-bottom: 10px;
+
+  a {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
 .has-submenu ul {
   display: none;
   position: absolute;
   top: 25px;
-  left: -40px;
+  left: -50px;
   background-color: $secondary2;
   padding: 20px;
   border-radius: 8px;
