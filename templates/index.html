@@ -12,9 +12,11 @@
         </p>
 
         <div class="buttons-container">
+          {% if user.is_authenticated != True %}
           <a href="{% url 'account_login' %}" class="button signup"
             >Login in / Sign Up</a
           >
+          {% endif %}
           <a href="{% url 'explore' %}" class="button">Explore Docs</a>
         </div>
       </div>
