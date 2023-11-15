@@ -701,9 +701,11 @@ form {
 }
 
 //----------------------------------- DOCS.html
+//----------------------------------- FAVOURITES.html
 
 .profile-page {
-  .docs-page {
+  .docs-page, 
+  .favourites-page {
     margin: 40px 0;
     .create-button {
       display: inline-flex;
@@ -738,6 +740,10 @@ form {
             margin-top: 4px;
             opacity: 0.8;
           }
+          .author {
+            color: $primary;
+            font-weight: 600;
+          }
         }
 
         .actions {
@@ -758,6 +764,8 @@ form {
     }
   }
 }
+
+
 
 //----------------------------------- DOCPOST_DETAIL.html
 

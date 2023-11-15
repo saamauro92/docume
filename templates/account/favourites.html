@@ -7,11 +7,13 @@
         <a
           href="{% url 'view_profile' %}"
           aria-label="Redirect to users profile"
-          ><i class="far fa-id-card"></i>Profile </a
-        >
+          ><i class="far fa-id-card"></i>Profile
+        </a>
       </li>
       <li>
-        <a href="{% url 'docs' %}" aria-label="Redirect to users Docs"> <i class="fas fa-code"></i>Docs</a>
+        <a href="{% url 'docs' %}" aria-label="Redirect to users Docs">
+          <i class="fas fa-code"></i>Docs</a
+        >
       </li>
       <li>
         <a
@@ -24,23 +26,24 @@
     </ul>
   </nav>
 
-  <section>
-
-    {% if favourites %} {% for favourite in favourites %}
-    <h3>{{ favourite.title }}</h3>
-
-    <p>{{ favourite.date }}</p>
-    <p>{{ favourite.excerpt }}</p>
-
-    <a
-      href="{% url 'docpost_detail' favourite.slug %}"
-      aria-label="Will redirect to {{ favourite.title}}">
-      View</a
-    >
-
-
-
-    {% endfor %} {% endif %}
+  <section class="favourites-page">
+    <div class="docs-list">
+      {% if favourites %} {% for favourite in favourites %}
+      <a
+        href="{% url 'docpost_detail' favourite.slug %}"
+        aria-label="Will redirect to {{ favourite.title}}"
+        class="docpost-card">
+        <article>
+          <div class="content">
+            <h3>{{ favourite.title }}</h3>
+            <p>{{ favourite.excerpt }}</p>
+            <p>by <span class="author">{{ favourite.author }}</span></p>
+          </div>
+          <div class="actions"></div>
+        </article>
+      </a>
+      {% endfor %} {% endif %}
+    </div>
   </section>
 </div>
 
