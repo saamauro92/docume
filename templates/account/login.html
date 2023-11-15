@@ -8,41 +8,28 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
+        <h3>{% trans "Sign In" %}</h3>
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+        </form>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
+
+        <div class="">
+        {% load socialaccount %}
+        <form action="{% provider_login_url 'google' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">SIGN IN WITH GOOGLE</button>
+        </form>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            {% load socialaccount %}
-             <form action="{% provider_login_url 'google' %}" method="post">
-                {% csrf_token %}
-                <button type="submit">SIGN IN WITH GOOGLE</button>
-              </form>
-    </div>
-    </div>
 
     <h3>
         Need an account ? 
     </h3>
-    <a href="{% url 'account_signup' %}">Create Account</a>
+    <a href="{% url 'account_signup' %}" class="button" aria-label="Redirects to create an account page">Create Account</a>
 </div>
 {% endblock %}
