@@ -1,13 +1,14 @@
 {% extends "base.html" %} {% block content %}
 
-<section class="container">
-  <h2>Create Post</h2>
+<section class="container create-post">
+  <h1>Create Post</h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %} {{ form.as_p }}
     <button type="submit">Create Post</button>
   </form>
-
-  <a href="{% url 'docs' %}" aria-label="Redirect to users Docs">Back to Docs</a>
+  <div class="back-button">
+    <a href="{% url 'docs' %}"  aria-label="Redirect to users Docs">Back to Docs</a>
+  </div>
 </section>
 
 {% endblock %}
