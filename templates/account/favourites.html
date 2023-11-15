@@ -3,12 +3,23 @@
 <div class="profile-page container">
   <nav class="secondary-navbar">
     <ul>
-      <li><a href="{% url 'view_profile' %}"  aria-label="Redirect to users profile">Profile</a></li>
       <li>
-        <a href="{% url 'docs' %}" aria-label="Redirect to users Docs">Docs</a>
+        <a
+          href="{% url 'view_profile' %}"
+          aria-label="Redirect to users profile"
+          ><i class="far fa-id-card"></i>Profile </a
+        >
       </li>
       <li>
-        <a href="{% url 'favourites' %}"  class="active"  aria-label="Redirect to users Favourites">Favourites</a>
+        <a href="{% url 'docs' %}" aria-label="Redirect to users Docs"> <i class="fas fa-code"></i>Docs</a>
+      </li>
+      <li>
+        <a
+          href="{% url 'favourites' %}"
+          class="active"
+          aria-label="Redirect to users Favourites"
+          ><i class="fas fa-bookmark"></i>Favourites</a
+        >
       </li>
     </ul>
   </nav>
