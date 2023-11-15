@@ -1,18 +1,15 @@
 {% extends "base.html" %} {% block content %}
 
-
-<section class="container">
-  <h2> UPDATE POST </h2>
+<section class="container update-docpost">
+  <div class="back-button">
+    <a href="{% url 'docs' %}" aria-label="Redirect to users Docs"> <i class="fas fa-long-arrow-alt-left"></i> Back to Docs</a>
+  </div>
+  <h1> Update Post </h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Update Post</button>
   </form>
-
-  <a href="{% url 'docs' %}" aria-label="Redirect to users Docs">Back to Docs</a>
 </section>
-
-
-
 
 {% endblock %}

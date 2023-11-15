@@ -112,8 +112,11 @@ body {
 }
 
 .back-button {
-  padding-top: 40px;
+  padding-bottom: 40px;
   text-decoration: underline;
+  i {
+    margin-right: 5px;
+  }
 }
 
 //----------------------------------- BASE.html
@@ -691,8 +694,8 @@ form {
 }
 
 //----------------------------------- UPDATE_PROFILE.html
-
-.update-profile {
+//----------------------------------- UPDATE_DOCPOST.html
+.update-profile, .update-docpost {
   padding-top: 40px;
 
   h1 {
