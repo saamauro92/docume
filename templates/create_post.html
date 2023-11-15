@@ -1,18 +1,18 @@
 {% extends "base.html" %} {% block content %}
 
-<script>
-            document.getElementById("docsTab").click();
-</script>
 
 <div class="profile-page container">
-  <div class="tab">
-    <button
-      class="tablinks"
-      onclick="openTab(event, 'Profile')"
-      id="defaultOpen">
-      Profile
-    </button>
-    <button class="tablinks" id="docsTab" onclick="openTab(event, 'Docs')">Docs</button>
+  <nav class="secondary-navbar">
+    <ul>
+      <li><a href="{% url 'view_profile' %}">Profile</a></li>
+      <li>
+        <a href="{% url 'docs' %}">Docs</a>
+      </li>
+      <li>
+        <a href="{% url 'favourites' %}">Favourites</a>
+      </li>
+    </ul>
+  </nav>
   </div>
 
   <div id="Profile" class="tabcontent">

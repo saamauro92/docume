@@ -1,10 +1,16 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="profile-page container">
-  <nav class="tab">
-    <a href="{% url 'view_profile' %}">Profile</a>
-    <a href="{% url 'docs' %}">Docs</a>
-    <a href="{% url 'favourites' %}">Favourites</a>
+  <nav class="secondary-navbar">
+    <ul>
+      <li><a href="{% url 'view_profile' %}">Profile</a></li>
+      <li>
+        <a href="{% url 'docs' %}">Docs</a>
+      </li>
+      <li>
+        <a href="{% url 'favourites' %}">Favourites</a>
+      </li>
+    </ul>
   </nav>
 
   <section id="Profile">
