@@ -3,18 +3,14 @@
 
 
 <section class="container update-profile">
-
   <h1>Update Profile</h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p}}
     <button type="submit" aria-label="Update profile button">Update Profile</button>
   </form>
-
   <div class="back-button">
     <a href="{% url 'view_profile' %}" aria-label="Redirect to users profile">Back to Profile</a>
-
   </div>
-
 </section>
 {% endblock %}
