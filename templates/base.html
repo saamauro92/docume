@@ -69,8 +69,9 @@
             </a>
 
             <ul>
+              <li><a href="{% url 'view_profile' %}">Profile</a></li>
+              <li><a href="{% url 'docs' %}">Docs</a></li>
               <li><a href="{% url 'favourites' %}">Favourites</a></li>
-              <li><a href="{% url 'view_profile' %}">Account</a></li>
               <li><a href="{% url 'account_logout' %}">Logout</a></li>
             </ul>
           </li>
@@ -118,11 +119,14 @@
             <a aria-current="page" href="{% url 'explore' %}">Explore Docs</a>
           </li>
           {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'view_profile' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a aria-current="page" href="{% url 'docs' %}">Docs </a>
+          </li>
           <li class="nav-item">
             <a aria-current="page" href="{% url 'favourites' %}">Favourites </a>
-          </li>
-          <li>
-            <a href="{% url 'view_profile' %}">Account</a>
           </li>
           {% else %}
 
