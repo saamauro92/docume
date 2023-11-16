@@ -3,13 +3,12 @@ from django.urls import reverse_lazy
 from django.views import generic, View
 from .models import DocPost, Profile, User
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import ProfilePicForm, DocPostForm
+from .forms import ProfilePicForm, DocPostForm, CommentForm
 
 class Home(generic.ListView): 
     """
     Creates home page view with docposts
     """
-
     model = DocPost
     queryset = DocPost.objects.filter(status=1).order_by('-created_on')
     template_name ='index.html'
@@ -43,7 +42,8 @@ class DocPostDetail(View):
             {
                 "docpost": docpost,
                 "comments": comments,
-                "liked": liked
+                "liked": liked,
+                "comment_form": CommentForm()
             },
         )
 
