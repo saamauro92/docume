@@ -46,6 +46,35 @@ class DocPostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+    
+    def post(self, request, slug, *args, **kwargs):
+        queryset = DocPost.objects.filter(status=1)
+        docpost = get_object_or_404(queryset, slug=slug)
+        comments = docpost.comment.order_by('created_on')
+        liked = False
+        if docpost.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment.docpost = docpost
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "docpost_detail.html",
+            {
+                "docpost": docpost,
+                "comments": comments,
+                "liked": liked,
+                "comment_form": comment_form,
+            },
+        )
 
 class DeleteDocPost(LoginRequiredMixin, generic.DeleteView):
     """
