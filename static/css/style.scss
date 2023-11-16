@@ -536,6 +536,7 @@ form {
 
     .subtitle {
       margin-top: 80px;
+      margin-bottom: 20px;
       font-size: 2rem;
     }
 
@@ -592,6 +593,7 @@ form {
             opacity: 0.8;
             i {
               all: unset;
+              color: $primary;
             }
           }
 
