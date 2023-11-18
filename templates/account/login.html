@@ -9,27 +9,36 @@
 
 <div class="container login-page">
         <h1>{% trans "Sign In" %}</h1>
-        <form class="login" method="POST" action="{% url 'account_login' %}">
+        <div class="grid"> 
+        <!-- REGULAR SINGIN -->
+        <div class="regular-signin">
+        <form class="" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+        <button class="" type="submit">{% trans "Sign In" %}</button>
         </form>
-
-
-        <div class="">
-        {% load socialaccount %}
-        <form action="{% provider_login_url 'google' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">SIGN IN WITH GOOGLE</button>
-        </form>
+        <!-- GOOGLE SINGIN/LOGIN -->
+        <div class="google-section">
+            {% load socialaccount %}
+            <form action="{% provider_login_url 'google' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="google-button" aria-label="Sign in with google account"> <i class="fab fa-google"></i>Sign in with Google</button>
+            </form>
+            </div>
         </div>
+            <!-- CREATE AN ACCOUNT LINK -->
+<div class="other-options">
+    <div class="register-section">
+        <h3>
+            Need an account ? 
+        </h3>
+        <a href="{% url 'account_signup' %}" class="button" aria-label="Redirects to create an account page">Create Account</a>
+    </div>
+</div>
 
-    <h3>
-        Need an account ? 
-    </h3>
-    <a href="{% url 'account_signup' %}" class="button" aria-label="Redirects to create an account page">Create Account</a>
+</div>
 </div>
 {% endblock %}
