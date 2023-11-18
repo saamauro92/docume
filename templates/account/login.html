@@ -7,8 +7,8 @@
 
 {% block content %}
 
-<div class="container">
-        <h3>{% trans "Sign In" %}</h3>
+<div class="container login-page">
+        <h1>{% trans "Sign In" %}</h1>
         <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}

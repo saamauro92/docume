@@ -753,7 +753,10 @@ form {
 
 //----------------------------------- UPDATE_PROFILE.html
 //----------------------------------- UPDATE_DOCPOST.html
-.update-profile, .update-docpost {
+//----------------------------------- SIGNUP_PAGE.html
+//----------------------------------- LOGIN.html
+
+.update-profile, .update-docpost, .signup-page, .login-page {
   padding-top: 40px;
 
   h1 {
@@ -856,3 +859,5 @@ form {
 .create-post {
   padding-top: 40px;
 }
+
+
