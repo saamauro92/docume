@@ -69,9 +69,19 @@
             </a>
 
             <ul>
-              <li><a href="{% url 'view_profile' %}">Profile <i class="far fa-id-card"></i> </a></li>
-              <li><a href="{% url 'docs' %}">Docs <i class="fas fa-code"></i></a></li>
-              <li><a href="{% url 'favourites' %}">Favourites <i class="fas fa-bookmark"></i></a></li>
+              <li>
+                <a href="{% url 'view_profile' %}"
+                  >Profile <i class="far fa-id-card"></i>
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'docs' %}">Docs <i class="fas fa-code"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'favourites' %}"
+                  >Favourites <i class="fas fa-bookmark"></i
+                ></a>
+              </li>
               <li><a href="{% url 'account_logout' %}">Logout</a></li>
             </ul>
           </li>
@@ -95,6 +105,14 @@
           <span></span>
         </div>
       </button>
+    </div>
+
+    <div class="container">
+      {% for message in messages %}
+      <div class="alert {{ message.tags }}" id="msg" role="alert">
+        {{ message | safe }}
+      </div>
+      {% endfor %}
     </div>
 
     <main class="">
@@ -141,9 +159,15 @@
     </footer>
 
     <script src="{% static '/js/script.js' %}"></script>
+    <script>
+      setTimeout(function () {
+        let messages = document.getElementById("msg");
+        messages.classList.add("close-alert");
+      }, 3000);
+    </script>
+
     <script
-    src="https://kit.fontawesome.com/7dd26437c3.js"
-    crossorigin="anonymous"
-  ></script>
+      src="https://kit.fontawesome.com/7dd26437c3.js"
+      crossorigin="anonymous"></script>
   </body>
 </html>

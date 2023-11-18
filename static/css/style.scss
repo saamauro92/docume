@@ -46,6 +46,7 @@ $xlarge: 1600px;
   to {
       opacity: 1;
   }
+
 }
 
 @keyframes fadeOut {
@@ -144,6 +145,7 @@ body {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+  animation: fadeIn 0.3s linear;
 }
 
 .alert-success {
@@ -167,6 +169,10 @@ body {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
+}
+
+.close-alert {
+  display: none;
 }
 
 //----------------------------------- BASE.html
