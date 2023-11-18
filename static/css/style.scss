@@ -852,6 +852,17 @@ form {
       opacity: 0.8;
     }
   }
+
+  .card-body {
+    p, ul,li,  h1, h2, h3, h4, h5, h6, b, i, a  {
+      color: white !important;
+      padding: 0 !important;
+      margin: 9 !important; 
+    }
+    a {
+      text-decoration: underline !important;
+    }
+  }
 }
 
 //----------------------------------- CREATE_POST.html
