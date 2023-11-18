@@ -705,15 +705,14 @@ form {
     .profile-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      justify-items: flex-end;
-
       @include small-down {
         grid-template-columns: 100%;
-        justify-items: center;
       }
 
       .content-section {
+        align-self: start;
         display: flex;
+        justify-content: flex-start;
         flex-direction: column;
         gap: 5px;
 
@@ -732,11 +731,19 @@ form {
       }
 
       .image-container {
-        align-self: self-start;
-        width: 200px;
-        height: 200px;
-
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include small-down {
+          grid-template-columns: 100%;
+        }
         img {
+          width: 200px;
+          height: 200px;
+          grid-column: 2;
+          @include small-down {
+            grid-column: 1;
+          }
+          align-self: end;
           width: 100%;
           height: 100%;
           border-radius: 8px;
@@ -745,6 +752,12 @@ form {
           grid-area: 1 /1;
           margin-bottom: 15px;
         }
+      }
+    }
+
+    a {
+      @include medium-down {
+        margin-top: 20px;
       }
     }
   }
@@ -854,10 +867,21 @@ form {
   }
 
   .card-body {
-    p, ul,li,  h1, h2, h3, h4, h5, h6, b, i, a  {
+    p,
+    ul,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    b,
+    i,
+    a {
       color: white !important;
       padding: 0 !important;
-      margin: 9 !important; 
+      margin: 9 !important;
     }
     a {
       text-decoration: underline !important;
@@ -874,7 +898,6 @@ form {
 //----------------------------------- LOGIN.html
 
 .login-page {
-
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
