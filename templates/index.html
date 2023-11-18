@@ -40,11 +40,6 @@
         <a
           href="{% url 'docpost_detail' post.slug  %}"
           class="latest-card-content">
-          {% if "placeholder" in post.featured_image.url %}
-          <img class="image" src="{{ post.image.url }}" alt="" />
-          {% else %}
-          <img class="image" src="{{ post.featured_image.url }}" alt="" />
-          {% endif %}
 
           <div class="text">
             <p class="card-title">{{ post.title }}</p>

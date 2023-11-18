@@ -10,14 +10,6 @@
           {% endif %}
     </div>
 
-    <div class="">
-        {% if "placeholder" in docpost.featured_image.url %}
-        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-        {% else %}
-        <img src=" {{ post.featured_image.url }}" width="100%">
-        {% endif %}
-    </div>
-
         <div class="card-body">
             <p class="card-text ">
                 {{ docpost.content | safe }}
