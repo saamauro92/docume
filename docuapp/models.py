@@ -16,10 +16,10 @@ class DocPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="doc_post")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-  
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    program = models.CharField(max_length=255, null=True, blank=True)
     likes = models.ManyToManyField(User, related_name='doc_post_likes', blank=True)
     public = models.BooleanField()
 

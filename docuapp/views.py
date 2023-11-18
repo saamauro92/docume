@@ -146,7 +146,7 @@ class CreateDocPost(LoginRequiredMixin,generic.CreateView):
     def form_valid(self, form):
         if self.request.user.is_authenticated:
             form.instance.author = self.request.user
-            form.instance.program = ''
+            form.instance.program = 'field not used'
             return super(CreateDocPost, self).form_valid(form)
         else:
             return render(self.request, 'account/login.html')
