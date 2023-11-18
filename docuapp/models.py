@@ -7,7 +7,6 @@ from django.utils.text import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-
 class DocPost(models.Model):
     """
     Defines model for documentation post
@@ -39,7 +38,6 @@ class DocPost(models.Model):
     def number_of_likes(self):
         return self.likes.count()
     
-
 class Comment(models.Model):
     """
     Defines model for comments on documentation posts
@@ -58,8 +56,6 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
     
-
-
 class Profile(models.Model):
     """
     Define profile model that extends the user add user bio, birth_date, image, and title
