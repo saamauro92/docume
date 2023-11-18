@@ -1,5 +1,7 @@
 cd "$1" || exit 1
 echo "-----> Compiling SCSS"
-python3 manage.py compilescss --traceback
+make sass
 echo "-----> Collecting static files"
 python3 manage.py collectstatic --noinput --traceback
+echo "-----> Compiling translation files"
+make compile_translations
