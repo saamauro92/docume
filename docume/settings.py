@@ -33,7 +33,7 @@ DEBUG = os.environ.get("DEVELOPMENT", "False").lower() == "true"
 
 X_FRAME_OPTIONS = "SAMEORIGIN" 
 
-ALLOWED_HOSTS = ['docuapp.herokuapp.com', '127.0.0.1','docume-6885a52f1f5c.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['docuapp.herokuapp.com', '127.0.0.1', 'docume-6885a52f1f5c', 'docume-6885a52f1f5c.herokuapp.com', 'localhost']
 
 # Application definition
 
