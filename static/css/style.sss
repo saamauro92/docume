@@ -73,7 +73,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -366,20 +366,24 @@ body {
   font-family: Inter, sans-serif;
   color: #ffffff;
 }
+
 body .navbar {
   display: grid;
   grid-template-columns: 8fr 4fr;
   align-items: center;
 }
+
 body .navbar ul li {
   display: inline;
   list-style: none;
   margin-right: 20px;
 }
+
 body .navbar ul li a {
   text-decoration: none;
   color: #ffffff;
 }
+
 body .navbar .login-button a {
   color: #8FFF7D;
 }
@@ -392,6 +396,7 @@ body .navbar .login-button a {
   border-radius: 4px;
   text-align: center;
 }
+
 .button:hover {
   background-color: #171717;
 }
@@ -406,6 +411,7 @@ body .navbar .login-button a {
   padding-bottom: 40px;
   text-decoration: underline;
 }
+
 .back-button i {
   margin-right: 5px;
 }
@@ -462,6 +468,7 @@ body .navbar .login-button a {
   padding: 0 !important;
   margin: 9 !important;
 }
+
 .richtext a {
   text-decoration: underline !important;
 }
@@ -477,9 +484,11 @@ body .navbar .login-button a {
   align-items: center;
   padding: 10px;
 }
+
 .navbar-container button {
   display: none;
 }
+
 @media screen and (max-width: 640px) {
   .navbar-container button {
     display: flex;
@@ -496,7 +505,6 @@ body .navbar .login-button a {
     position: relative;
   }
 }
-
 .mainNavbar ul {
   list-style: none;
   margin: 0;
@@ -509,11 +517,13 @@ body .navbar .login-button a {
   position: relative;
   margin-bottom: 10px;
 }
+
 .mainNavbar li a {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
+
 .mainNavbar li a:hover {
   opacity: 0.8;
 }
@@ -586,11 +596,13 @@ body .navbar .login-button a {
 .footer {
   padding: 80px 20px;
 }
+
 .footer .grid {
   display: grid;
   grid-template-columns: 1fr 2.5fr;
   justify-items: start;
 }
+
 @media screen and (max-width: 1024px) {
   .footer .grid {
     grid-template-columns: 100%;
@@ -599,13 +611,16 @@ body .navbar .login-button a {
 .footer .grid .logo-text {
   padding: 20px 0 40px 0;
 }
+
 .footer .grid .logo-text p {
   margin-top: 20px;
   font-size: 1.4em;
 }
+
 .footer .grid .nav {
   list-style: none;
 }
+
 .footer .grid .nav li {
   margin-top: 10px;
 }
@@ -613,6 +628,7 @@ body .navbar .login-button a {
 form {
   max-width: 380px;
 }
+
 form input {
   height: 40px;
   padding-left: 5px;
@@ -622,24 +638,29 @@ form input {
   color: white;
   outline: none;
 }
+
 form input[type=checkbox] {
   height: 20px;
   align-self: flex-start;
 }
+
 form input[type=file] {
   height: 20px;
   border: none;
   background-color: transparent;
   height: 50px;
 }
+
 form label {
   margin-top: 10px;
 }
+
 form > p {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 form button[type=submit] {
   color: #ffffff;
   font-weight: 500;
@@ -654,6 +675,7 @@ form button[type=submit] {
   border: none;
   cursor: pointer;
 }
+
 form button[type=submit]:hover {
   background-color: #171717;
 }
@@ -661,17 +683,20 @@ form button[type=submit]:hover {
 .homepage {
   padding: 0;
 }
+
 .homepage .homebanner {
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .homepage .homebanner .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: end;
 }
+
 @media screen and (max-width: 1024px) {
   .homepage .homebanner .grid {
     grid-template-columns: 100%;
@@ -687,19 +712,24 @@ form button[type=submit]:hover {
 .homepage .homebanner .left-side {
   gap: 10px;
 }
+
 .homepage .homebanner .left-side .title {
   font-size: 3rem;
   margin-bottom: 16px;
 }
+
 .homepage .homebanner .left-side .text {
   margin-bottom: 16px;
 }
+
 .homepage .homebanner .left-side .signup {
   color: #8FFF7D;
 }
+
 .homepage .homebanner .left-side .buttons-container {
   margin-top: 20px;
 }
+
 @media screen and (max-width: 1024px) {
   .homepage .homebanner .left-side .buttons-container {
     display: flex;
@@ -710,6 +740,7 @@ form button[type=submit]:hover {
 .homepage .featured-banner {
   padding-top: 40px;
 }
+
 @media screen and (max-width: 1024px) {
   .homepage .featured-banner {
     margin-top: 120px;
@@ -719,14 +750,17 @@ form button[type=submit]:hover {
   font-size: 2.2rem;
   text-align: center;
 }
+
 .homepage .featured-banner .text {
   margin: 16px 0 40px 0;
   text-align: center;
 }
+
 .homepage .featured-banner .featureds-container {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .homepage .featured-banner .featureds-container .featured-card {
   border-radius: 4px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -734,6 +768,7 @@ form button[type=submit]:hover {
   grid-template-columns: 4fr 1fr;
   align-items: center;
 }
+
 @media screen and (max-width: 640px) {
   .homepage .featured-banner .featureds-container .featured-card {
     grid-template-columns: 100%;
@@ -747,6 +782,7 @@ form button[type=submit]:hover {
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
+
 @media screen and (max-width: 640px) {
   .homepage .featured-banner .featureds-container .featured-card .featured-card-inner {
     grid-template-columns: 100%;
@@ -758,21 +794,25 @@ form button[type=submit]:hover {
   align-items: baseline;
   gap: 10px;
 }
+
 .homepage .featured-banner .featureds-container .featured-card:hover {
   opacity: 0.8;
 }
+
 .homepage .call-to-action {
   margin-top: 80px;
   padding: 80px 0;
   text-align: center;
   background-color: #565656;
 }
+
 .homepage .call-to-action .title {
   font-size: 2rem;
   font-weight: 300;
   margin: 0;
   margin-bottom: 20px;
 }
+
 .homepage .call-to-action a {
   padding: 14px 36px;
 }
@@ -780,24 +820,28 @@ form button[type=submit]:hover {
 .image-container {
   align-self: flex-end;
 }
+
 .image-container img {
   max-width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .explore-page {
   padding: 60px 20px 40px 20px;
 }
+
 .explore-page .heading {
   text-align: center;
   font-size: 3rem;
   padding-bottom: 40px;
 }
+
 .explore-page .featureds-container {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .explore-page .featureds-container .featured-card {
   border-radius: 4px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -805,6 +849,7 @@ form button[type=submit]:hover {
   grid-template-columns: 4fr 1fr;
   align-items: center;
 }
+
 @media screen and (max-width: 640px) {
   .explore-page .featureds-container .featured-card {
     grid-template-columns: 100%;
@@ -818,6 +863,7 @@ form button[type=submit]:hover {
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
+
 @media screen and (max-width: 640px) {
   .explore-page .featureds-container .featured-card .featured-card-inner {
     grid-template-columns: 100%;
@@ -829,17 +875,21 @@ form button[type=submit]:hover {
   align-items: baseline;
   gap: 10px;
 }
+
 .explore-page .featureds-container .featured-card:hover {
   opacity: 0.8;
 }
+
 .explore-page .subtitle {
   margin-top: 80px;
   margin-bottom: 20px;
   font-size: 2rem;
 }
+
 .explore-page .more-container {
   max-width: 75%;
 }
+
 @media screen and (max-width: 640px) {
   .explore-page .more-container {
     max-width: 100%;
@@ -852,9 +902,11 @@ form button[type=submit]:hover {
   border-radius: 8px;
   padding: 20px 10px;
 }
+
 .explore-page .more-container .more-card:hover {
   background-color: #363636;
 }
+
 @media screen and (max-width: 640px) {
   .explore-page .more-container .more-card {
     grid-template-columns: 100%;
@@ -863,24 +915,29 @@ form button[type=submit]:hover {
 .explore-page .more-container .more-card h4 {
   margin: 0;
 }
+
 .explore-page .more-container .more-card .intro .card-title {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
+
 .explore-page .more-container .more-card .intro .card-text {
   color: #ffffff;
   margin-bottom: 1rem;
   opacity: 0.8;
 }
+
 .explore-page .more-container .more-card .intro .card-bottom {
   opacity: 0.8;
 }
+
 .explore-page .more-container .more-card .intro .card-bottom i {
   all: unset;
   color: #8FFF7D;
 }
+
 .explore-page .more-container .more-card .intro .image-container {
   max-width: 300px;
 }
@@ -888,41 +945,51 @@ form button[type=submit]:hover {
 .profile-page {
   padding-top: 40px;
 }
+
 .profile-page .secondary-navbar {
   display: grid;
   align-items: center;
 }
+
 .profile-page .secondary-navbar ul {
   padding: 0;
 }
+
 .profile-page .secondary-navbar ul li {
   display: inline;
   list-style: none;
   margin-right: 15px;
 }
+
 .profile-page .secondary-navbar ul li a {
   text-decoration: none;
   color: #ffffff;
   padding-bottom: 5px;
   padding-right: 5px;
 }
+
 .profile-page .secondary-navbar ul li a i {
   margin-right: 10px;
 }
+
 .profile-page .secondary-navbar ul li a.active {
   border-right: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
 }
+
 .profile-page .secondary-navbar .login-button a {
   color: #8FFF7D;
 }
+
 .profile-page .profile {
   margin: 40px 0px;
 }
+
 .profile-page .profile .profile-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 @media screen and (max-width: 640px) {
   .profile-page .profile .profile-grid {
     grid-template-columns: 100%;
@@ -935,6 +1002,7 @@ form button[type=submit]:hover {
   flex-direction: column;
   gap: 5px;
 }
+
 .profile-page .profile .profile-grid .content-section .bio p,
 .profile-page .profile .profile-grid .content-section .bio h1,
 .profile-page .profile .profile-grid .content-section .bio h2,
@@ -945,10 +1013,12 @@ form button[type=submit]:hover {
   opacity: 0.6 !important;
   line-height: 130%;
 }
+
 .profile-page .profile .profile-grid .image-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 @media screen and (max-width: 640px) {
   .profile-page .profile .profile-grid .image-container {
     grid-template-columns: 100%;
@@ -963,6 +1033,7 @@ form button[type=submit]:hover {
   height: 100%;
   border-radius: 8px;
 }
+
 @media screen and (max-width: 640px) {
   .profile-page .profile .profile-grid .image-container img {
     grid-column: 1;
@@ -979,7 +1050,6 @@ form button[type=submit]:hover {
     margin-top: 20px;
   }
 }
-
 .update-profile,
 .update-docpost,
 .signup-page,
@@ -987,6 +1057,7 @@ form button[type=submit]:hover {
 .error-page {
   padding-top: 40px;
 }
+
 .update-profile h1,
 .update-docpost h1,
 .signup-page h1,
@@ -999,12 +1070,14 @@ form button[type=submit]:hover {
 .profile-page .favourites-page {
   margin: 40px 0;
 }
+
 .profile-page .docs-page .create-button,
 .profile-page .favourites-page .create-button {
   display: inline-flex;
   align-self: self-end;
   gap: 10px;
 }
+
 .profile-page .docs-page .docs-list,
 .profile-page .favourites-page .docs-list {
   margin-top: 20px;
@@ -1012,6 +1085,7 @@ form button[type=submit]:hover {
   flex-direction: column;
   gap: 8px;
 }
+
 .profile-page .docs-page .docs-list .docpost-card,
 .profile-page .favourites-page .docs-list .docpost-card {
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1020,6 +1094,7 @@ form button[type=submit]:hover {
   display: flex;
   justify-content: space-between;
 }
+
 @media screen and (max-width: 1024px) {
   .profile-page .docs-page .docs-list .docpost-card,
   .profile-page .favourites-page .docs-list .docpost-card {
@@ -1031,22 +1106,26 @@ form button[type=submit]:hover {
 .profile-page .favourites-page .docs-list .docpost-card .content h3 {
   font-size: 1.5rem;
 }
+
 .profile-page .docs-page .docs-list .docpost-card .content p,
 .profile-page .favourites-page .docs-list .docpost-card .content p {
   margin-top: 4px;
   opacity: 0.8;
 }
+
 .profile-page .docs-page .docs-list .docpost-card .content .author,
 .profile-page .favourites-page .docs-list .docpost-card .content .author {
   color: #8FFF7D;
   font-weight: 600;
 }
+
 .profile-page .docs-page .docs-list .docpost-card .actions,
 .profile-page .favourites-page .docs-list .docpost-card .actions {
   display: flex;
   gap: 10px;
   align-items: flex-start;
 }
+
 @media screen and (max-width: 1024px) {
   .profile-page .docs-page .docs-list .docpost-card .actions,
   .profile-page .favourites-page .docs-list .docpost-card .actions {
@@ -1057,6 +1136,7 @@ form button[type=submit]:hover {
 .profile-page .favourites-page .docs-list .docpost-card .actions form button[type=submit] {
   margin-top: unset;
 }
+
 .profile-page .docs-page .no-favourites a,
 .profile-page .favourites-page .no-favourites a {
   margin-top: 20px;
@@ -1065,19 +1145,24 @@ form button[type=submit]:hover {
 .detail-page {
   padding: 60px 20px 40px 20px;
 }
+
 .detail-page .header {
   margin-bottom: 60px;
 }
+
 .detail-page .header .post-title {
   color: #8FFF7D;
 }
+
 .detail-page .header .post-title,
 .detail-page .header .post-subtitle {
   text-align: center;
 }
+
 .detail-page .header .post-title {
   font-size: 3rem;
 }
+
 .detail-page .header .post-subtitle {
   margin-top: 15px;
   opacity: 0.8;
@@ -1085,49 +1170,62 @@ form button[type=submit]:hover {
   justify-content: center;
   gap: 20px;
 }
+
 .detail-page .header .post-subtitle .add-favourites {
   display: flex;
   gap: 5px;
 }
+
 .detail-page .header .post-subtitle .add-favourites:hover {
   opacity: 0.8;
 }
+
 .detail-page .card-body,
 .detail-page .comments {
   margin: 0 auto;
   max-width: 800px;
 }
+
 .detail-page .card-body {
   margin-bottom: 40px;
 }
+
 .detail-page .comments .title {
   color: #8FFF7D;
   margin-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.9);
 }
+
 .detail-page .comments .comment-form {
   padding-top: 20px;
 }
+
 .detail-page .comments .comment-form .posting-as {
   margin-top: 20px;
 }
+
 .detail-page .comments .comment-form .posting-as i {
   color: #8FFF7D;
 }
+
 .detail-page .comments .comment-form .sign-in {
   margin-top: 20px;
 }
+
 .detail-page .comments .comments-list {
   padding-top: 20px;
 }
+
 .detail-page .comments .comments-list .comment-body {
   padding: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 .detail-page .comments .comments-list .comment-body .comment-heading {
   font-weight: 600;
 }
+
 .detail-page .comments .comments-list .comment-body .text {
   padding-top: 15px;
   opacity: 0.8;
@@ -1141,6 +1239,7 @@ form button[type=submit]:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 @media screen and (max-width: 1024px) {
   .login-page .grid {
     grid-template-columns: 100%;
@@ -1149,6 +1248,7 @@ form button[type=submit]:hover {
 .login-page .regular-signin {
   border-right: 1px solid #ffffff;
 }
+
 @media screen and (max-width: 1024px) {
   .login-page .regular-signin {
     border: none;
@@ -1158,6 +1258,7 @@ form button[type=submit]:hover {
   display: flex;
   justify-content: center;
 }
+
 .login-page .register-section {
   padding-top: 50px;
   display: flex;
@@ -1165,19 +1266,25 @@ form button[type=submit]:hover {
   flex-direction: column;
   justify-content: flex-start;
 }
+
 .login-page .register-section h3 {
   margin-bottom: 20px;
 }
+
 .login-page .register-section a {
   background-color: transparent;
   border: 2px solid #ffffff;
 }
+
 .login-page .google-section {
   max-width: 99%;
   border-top: 1px solid white;
   margin-top: 20px;
 }
+
 .login-page .google-section .google-button {
   display: flex;
   gap: 10px;
-}/*# sourceMappingURL=style.css.map */
+} 
+
+/*# sourceMappingURL=style.sss.map */
