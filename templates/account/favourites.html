@@ -38,11 +38,25 @@
             <h3>{{ favourite.title }}</h3>
             <p>{{ favourite.excerpt }}</p>
             <p>by <span class="author">{{ favourite.author }}</span></p>
+            <form
+            action="{% url 'remove_from_favorites' favourite.id %}"
+            method="DELETE"
+            onsubmit="deletePost()"
+          >
+            {% csrf_token %}
+            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+          </form>
           </div>
           <div class="actions"></div>
         </article>
       </a>
-      {% endfor %} {% endif %}
+      {% endfor %} 
+      {% else %}
+<div>
+  <p> You have no favourites added at the moment.</p>
+  <a href="{% url 'explore' %}" class="button">Explore Docs</a>
+</div>
+      {% endif %}
     </div>
   </section>
 </div>

@@ -13,5 +13,6 @@ urlpatterns = [
     path('create_post/', views.CreateDocPost.as_view(), name='create_post'),
     path('update_docpost/<int:pk>', views.UpdateDocPost.as_view(), name='update_docpost'),
     path('add_to_favorites/<int:docpost_id>/', views.AddToFavoritesView.as_view(), name='add_to_favorites'),
+    path('remove-from-favorites/<int:docpost_id>/', views.RemoveFromFavoritesView.as_view(), name='remove_from_favorites'),
     path('favourites/', views.ProfileFavouritesView.as_view(), name='favourites'),
 ]

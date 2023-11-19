@@ -222,6 +222,20 @@ class AddToFavoritesView(LoginRequiredMixin, generic.View):
 
         return redirect('favourites')
 
+class RemoveFromFavoritesView(LoginRequiredMixin, generic.View):
+    """
+    Authenticated user will be able to remove a docpost from favourites
+    """
+    def get(self, request, docpost_id):
+        docpost = get_object_or_404(DocPost, pk=docpost_id)
+
+        if request.user.is_authenticated:
+            profile = Profile.objects.filter(user=request.user).first()
+            if profile is not None:
+                profile.remove_from_favorites(docpost)
+
+        return redirect('favourites')
+
 class ProfileFavouritesView(LoginRequiredMixin, generic.ListView):
     """
     Explore list of favourites
