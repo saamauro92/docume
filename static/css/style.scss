@@ -174,6 +174,28 @@ body {
   display: none;
 }
 
+.richtext {
+  p,
+  ul,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  b,
+  i,
+  a {
+    color: white !important;
+    padding: 0 !important;
+    margin: 9 !important;
+  }
+  a {
+    text-decoration: underline !important;
+  }
+}
+
 //----------------------------------- BASE.html
 // https://www.w3.org/WAI/tutorials/menus/flyout
 
@@ -823,25 +845,6 @@ form {
   }
 
   .card-body {
-    p,
-    ul,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    b,
-    i,
-    a {
-      color: white !important;
-      padding: 0 !important;
-      margin: 9 !important;
-    }
-    a {
-      text-decoration: underline !important;
-    }
     margin-bottom: 40px;
   }
 
@@ -870,12 +873,13 @@ form {
       padding-top: 20px;
       .comment-body {
         padding: 20px;
-        border-radius: 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         .comment-heading {
           font-weight: 600;
         }
         .text {
           padding-top: 15px;
+          opacity: 0.8;
         }
       }
     }

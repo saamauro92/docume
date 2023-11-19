@@ -21,6 +21,7 @@ class DocPostForm(forms.ModelForm):
         fields = ('title', 'excerpt', 'content', 'status','public')
 
 class CommentForm(forms.ModelForm):
+    body = forms.CharField(widget=SummernoteWidget())
     class Meta:
         model = Comment
         fields = ('body', )

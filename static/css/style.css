@@ -446,6 +446,26 @@ body .navbar .login-button a {
   display: none;
 }
 
+.richtext p,
+.richtext ul,
+.richtext li,
+.richtext h1,
+.richtext h2,
+.richtext h3,
+.richtext h4,
+.richtext h5,
+.richtext h6,
+.richtext b,
+.richtext i,
+.richtext a {
+  color: white !important;
+  padding: 0 !important;
+  margin: 9 !important;
+}
+.richtext a {
+  text-decoration: underline !important;
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -1044,25 +1064,6 @@ form button[type=submit]:hover {
 .detail-page .card-body {
   margin-bottom: 40px;
 }
-.detail-page .card-body p,
-.detail-page .card-body ul,
-.detail-page .card-body li,
-.detail-page .card-body h1,
-.detail-page .card-body h2,
-.detail-page .card-body h3,
-.detail-page .card-body h4,
-.detail-page .card-body h5,
-.detail-page .card-body h6,
-.detail-page .card-body b,
-.detail-page .card-body i,
-.detail-page .card-body a {
-  color: white !important;
-  padding: 0 !important;
-  margin: 9 !important;
-}
-.detail-page .card-body a {
-  text-decoration: underline !important;
-}
 .detail-page .comments .title {
   color: #8FFF7D;
   margin-top: 20px;
@@ -1086,13 +1087,14 @@ form button[type=submit]:hover {
 }
 .detail-page .comments .comments-list .comment-body {
   padding: 20px;
-  border-radius: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 .detail-page .comments .comments-list .comment-body .comment-heading {
   font-weight: 600;
 }
 .detail-page .comments .comments-list .comment-body .text {
   padding-top: 15px;
+  opacity: 0.8;
 }
 
 .create-post {
