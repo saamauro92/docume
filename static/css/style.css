@@ -751,68 +751,40 @@ form button[type=submit]:hover {
   font-size: 3rem;
   padding-bottom: 40px;
 }
-.explore-page .latest-container {
-  display: flex;
-  flex-direction: column;
+.explore-page .featureds-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
-.explore-page .latest-container .featured-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.explore-page .latest-container .featured-cards .latest-card {
+.explore-page .featureds-container .featured-card {
   border-radius: 4px;
-  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.explore-page .latest-container .featured-cards .latest-card .image {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
-  min-height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.explore-page .featureds-container .featured-card .featured-card-inner {
+  padding: 30px 20px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
 }
-.explore-page .latest-container .featured-cards .latest-card .text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+.explore-page .featureds-container .featured-card .featured-card-inner .card-author i {
+  color: #8FFF7D;
 }
-.explore-page .latest-container .featured-cards .latest-card .text .card-title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 0;
-}
-.explore-page .latest-container .featured-cards .latest-card .text .card-date {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 300;
+.explore-page .featureds-container:hover {
   opacity: 0.8;
 }
-@media screen and (max-width: 1024px) {
-  .explore-page .latest-container .featured-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 640px) {
-  .explore-page .latest-container .featured-cards {
-    grid-template-columns: 100%;
-    padding: 0px;
-  }
-}
-.explore-page .latest-container .subtitle {
+.explore-page .subtitle {
   margin-top: 80px;
   margin-bottom: 20px;
   font-size: 2rem;
 }
-.explore-page .latest-container .more-container {
+.explore-page .more-container {
   max-width: 75%;
 }
 @media screen and (max-width: 640px) {
-  .explore-page .latest-container .more-container {
+  .explore-page .more-container {
     max-width: 100%;
   }
 }
-.explore-page .latest-container .more-container .more-card {
+.explore-page .more-container .more-card {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   justify-content: space-around;
@@ -823,15 +795,15 @@ form button[type=submit]:hover {
   border-radius: 8px;
   padding: 10px;
 }
-.explore-page .latest-container .more-container .more-card:hover {
+.explore-page .more-container .more-card:hover {
   background-color: #363636;
 }
 @media screen and (max-width: 640px) {
-  .explore-page .latest-container .more-container .more-card {
+  .explore-page .more-container .more-card {
     grid-template-columns: 100%;
   }
 }
-.explore-page .latest-container .more-container .more-card .image-container img {
+.explore-page .more-container .more-card .image-container img {
   width: 100%;
   height: auto;
   max-height: 200px;
@@ -840,25 +812,25 @@ form button[type=submit]:hover {
      object-fit: cover;
   border-radius: 4px;
 }
-.explore-page .latest-container .more-container .more-card .intro .card-title {
+.explore-page .more-container .more-card .intro .card-title {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.explore-page .latest-container .more-container .more-card .intro .card-text {
+.explore-page .more-container .more-card .intro .card-text {
   color: #ffffff;
   margin-bottom: 1rem;
   opacity: 0.8;
 }
-.explore-page .latest-container .more-container .more-card .intro .card-bottom {
+.explore-page .more-container .more-card .intro .card-bottom {
   opacity: 0.8;
 }
-.explore-page .latest-container .more-container .more-card .intro .card-bottom i {
+.explore-page .more-container .more-card .intro .card-bottom i {
   all: unset;
   color: #8FFF7D;
 }
-.explore-page .latest-container .more-container .more-card .intro .image-container {
+.explore-page .more-container .more-card .intro .image-container {
   max-width: 300px;
 }
 

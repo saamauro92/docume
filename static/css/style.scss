@@ -199,7 +199,6 @@ body {
         height: 100%;
         position: relative;
       }
-
     }
   }
 }
@@ -225,7 +224,6 @@ body {
       opacity: 0.8;
     }
   }
-
 }
 
 .has-submenu ul {
@@ -237,7 +235,6 @@ body {
   padding: 20px;
   border-radius: 8px;
   text-align: right;
-
 }
 
 .has-submenu:hover ul,
@@ -277,7 +274,6 @@ body {
       cursor: pointer;
       z-index: 10;
     }
-
   }
 
   .mainNavbar ul.show {
@@ -455,7 +451,7 @@ form {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         .featured-card-inner {
           padding: 30px 20px;
-  
+
           border-radius: 4px;
           display: grid;
           grid-template-columns: 3fr 1fr 1fr;
@@ -463,12 +459,9 @@ form {
           .card-author {
             i {
               color: $primary;
-
             }
           }
-
         }
-
       }
 
       &:hover {
@@ -509,125 +502,103 @@ form {
 
 .explore-page {
   padding: 60px 0 40px 0;
+
   .heading {
     text-align: center;
     font-size: 3rem;
     padding-bottom: 40px;
   }
-  .latest-container {
-    display: flex;
-    flex-direction: column;
+  .featureds-container {
+    max-width: 800px;
+    margin: 0 auto;
+    .featured-card {
+      border-radius: 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .featured-card-inner {
+        padding: 30px 20px;
 
-    .featured-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-
-      .latest-card {
         border-radius: 4px;
-        overflow: hidden;
-        .image {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+
+        .card-author {
+          i {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .subtitle {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .more-container {
+    max-width: calc(150% / 2);
+    @include small-down {
+      max-width: 100%;
+    }
+
+    .more-card {
+      display: grid;
+      grid-template-columns: 1fr 0.5fr;
+      justify-content: space-around;
+      gap: 30px;
+      margin-bottom: 15px;
+      transition: 0.2s ease all;
+      background-color: darken($body, 5);
+      border-radius: 8px;
+      padding: 10px;
+      &:hover {
+        background-color: darken($body, 3);
+      }
+
+      @include small-down {
+        grid-template-columns: 100%;
+      }
+
+      .image-container {
+        img {
           width: 100%;
           height: auto;
           max-height: 200px;
           min-height: 200px;
           object-fit: cover;
+          border-radius: 4px;
         }
-        .text {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
+      }
 
-          .card-title {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin: 0;
+      .intro {
+        .card-title {
+          color: $white;
+          text-decoration: none;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .card-text {
+          color: $white;
+          margin-bottom: 1rem;
+          opacity: 0.8;
+        }
+
+        .card-bottom {
+          opacity: 0.8;
+          i {
+            all: unset;
+            color: $primary;
           }
-          .card-date {
-            margin: 0;
-            font-size: 0.8rem;
-            font-weight: 300;
-            opacity: 0.8;
-          }
-        }
-      }
-
-      @include medium-down {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include small-down {
-        grid-template-columns: 100%;
-        padding: 0px;
-      }
-    }
-
-    .subtitle {
-      margin-top: 80px;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    .more-container {
-      max-width: calc(150% / 2);
-      @include small-down {
-        max-width: 100%;
-      }
-
-      .more-card {
-        display: grid;
-        grid-template-columns: 1fr 0.5fr;
-        justify-content: space-around;
-        gap: 30px;
-        margin-bottom: 15px;
-        transition: 0.2s ease all;
-        background-color: darken($body, 5);
-        border-radius: 8px;
-        padding: 10px;
-        &:hover {
-          background-color: darken($body, 3);
-        }
-
-        @include small-down {
-          grid-template-columns: 100%;
         }
 
         .image-container {
-          img {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-            min-height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-          }
-        }
-
-        .intro {
-          .card-title {
-            color: $white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-          }
-
-          .card-text {
-            color: $white;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-          }
-
-          .card-bottom {
-            opacity: 0.8;
-            i {
-              all: unset;
-              color: $primary;
-            }
-          }
-
-          .image-container {
-            max-width: 300px;
-          }
+          max-width: 300px;
         }
       }
     }
@@ -746,7 +717,7 @@ form {
 .update-docpost,
 .signup-page,
 .login-page,
- .error-page {
+.error-page {
   padding-top: 40px;
 
   h1 {
