@@ -117,7 +117,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'docume.wsgi.application'
 
+SUMMERNOTE_CONFIG = {
+    # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['insert', ['link', 'picture', ]],
+            ['view', ['codeview', 'help']],
+        ],
 
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
