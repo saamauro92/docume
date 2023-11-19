@@ -1012,6 +1012,9 @@ form button[type=submit]:hover {
 .detail-page .header {
   margin-bottom: 60px;
 }
+.detail-page .header .post-title {
+  color: #8FFF7D;
+}
 .detail-page .header .post-title,
 .detail-page .header .post-subtitle {
   text-align: center;
@@ -1022,6 +1025,24 @@ form button[type=submit]:hover {
 .detail-page .header .post-subtitle {
   margin-top: 15px;
   opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.detail-page .header .post-subtitle .add-favourites {
+  display: flex;
+  gap: 5px;
+}
+.detail-page .header .post-subtitle .add-favourites:hover {
+  opacity: 0.8;
+}
+.detail-page .card-body,
+.detail-page .comments {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.detail-page .card-body {
+  margin-bottom: 40px;
 }
 .detail-page .card-body p,
 .detail-page .card-body ul,
@@ -1041,6 +1062,37 @@ form button[type=submit]:hover {
 }
 .detail-page .card-body a {
   text-decoration: underline !important;
+}
+.detail-page .comments .title {
+  color: #8FFF7D;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}
+.detail-page .comments .comment-form {
+  padding-top: 20px;
+}
+.detail-page .comments .comment-form .posting-as {
+  margin-top: 20px;
+}
+.detail-page .comments .comment-form .posting-as i {
+  color: #8FFF7D;
+}
+.detail-page .comments .comment-form .sign-in {
+  margin-top: 20px;
+}
+.detail-page .comments .comments-list {
+  padding-top: 20px;
+}
+.detail-page .comments .comments-list .comment-body {
+  padding: 20px;
+  border-radius: 4px;
+}
+.detail-page .comments .comments-list .comment-body .comment-heading {
+  font-weight: 600;
+}
+.detail-page .comments .comments-list .comment-body .text {
+  padding-top: 15px;
 }
 
 .create-post {

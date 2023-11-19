@@ -2,53 +2,52 @@
 {% load crispy_forms_tags %}
 
 <section class="detail-page container">
+    <!-- POST CONTENT -->
     <div class="header">
         <h1 class="post-title">{{ docpost.title }}</h1>
-        <p class="post-subtitle">{{ docpost.author }} | {{ docpost.created_on }}</p>
-        {% if user.is_authenticated and docpost.author != user and docpost.public %}
-        <a href="{% url 'add_to_favorites' docpost.id %}">Add to Favorites</a>
-          {% endif %}
+    <p class="post-subtitle">{{ docpost.author }} | {{ docpost.created_on }}       
+        <a href="{% url 'add_to_favorites' docpost.id %}" class="add-favourites">
+        <i class="fas fa-bookmark"></i>Add to Favorites</a>   
+     </p>
     </div>
-
         <div class="card-body">
             <p class="card-text ">
                 {{ docpost.content | safe }}
             </p>
         </div>
-
-
+    <!-- COMMENTS -->
         <div class="comments">
-            <h3>Comments:</h3>
-
-            <div>
+            <div class="comment-form">
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form  }}
+                    {{ comment_form.body  }}
                     {% csrf_token %}
+                    <p class="posting-as">Posting as: <i>{{ user.username }} </i> </p>
                     <button type="submit" class="button ">Submit</button>
                 </form>
+                {% else %}
+                <div class="sign-in">
+                    <a href="{% url 'account_login' %}" class="button">Sign in to leave a comment</a>
+                </div>
                 {% endif %}
-   
             </div>
-
-            <div class="">
+            <h3 class="title">Comments:</h3>
+            <div class="comments-list">
                 {% for comment in comments %}
-                <div class="comments">
-                    <p class="">
+                <div class="comment-body">
+                    <p class="comment-heading">
                         {{ comment.name }}
                             {{ comment.created_on }}
-                        </span> wrote:
+                        </span> 
                     </p>
-
-                    {{ comment.body | linebreaks }}
+                    <div class="text">
+                        {{ comment.body | linebreaks }}
+                    </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-        
-
 </section>
 
 {% endblock content %}

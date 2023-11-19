@@ -466,7 +466,6 @@ form {
           opacity: 0.8;
         }
       }
-
     }
   }
 
@@ -501,7 +500,7 @@ form {
 //----------------------------------- EXPLORE.html
 
 .explore-page {
-   padding: 60px 20px 40px 20px;
+  padding: 60px 20px 40px 20px;
   .heading {
     text-align: center;
     font-size: 3rem;
@@ -561,7 +560,7 @@ form {
       h4 {
         margin: 0;
       }
-      
+
       .intro {
         .card-title {
           color: $white;
@@ -782,7 +781,6 @@ form {
   }
 }
 
-
 //----------------------------------- DOCPOST_DETAIL.html
 
 .detail-page {
@@ -790,6 +788,9 @@ form {
 
   .header {
     margin-bottom: 60px;
+    .post-title {
+      color: $primary;
+    }
     .post-title,
     .post-subtitle {
       text-align: center;
@@ -802,7 +803,23 @@ form {
     .post-subtitle {
       margin-top: 15px;
       opacity: 0.8;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      .add-favourites {
+        display: flex;
+        gap: 5px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
+  }
+  .card-body,
+  .comments {
+    margin: 0 auto;
+    max-width: 800px;
   }
 
   .card-body {
@@ -824,6 +841,43 @@ form {
     }
     a {
       text-decoration: underline !important;
+    }
+    margin-bottom: 40px;
+  }
+
+  .comments {
+    .title {
+      color: $primary;
+      margin-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+    }
+    .comment-form {
+      padding-top: 20px;
+      .posting-as {
+        margin-top: 20px;
+      }
+
+      .posting-as i {
+        color: $primary;
+      }
+
+      .sign-in {
+        margin-top: 20px;
+      }
+    }
+    .comments-list {
+      padding-top: 20px;
+      .comment-body {
+        padding: 20px;
+        border-radius: 4px;
+        .comment-heading {
+          font-weight: 600;
+        }
+        .text {
+          padding-top: 15px;
+        }
+      }
     }
   }
 }
