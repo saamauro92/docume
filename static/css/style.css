@@ -682,6 +682,9 @@ form button[type=submit]:hover {
     gap: 10px;
   }
 }
+.homepage .featured-banner {
+  padding-top: 40px;
+}
 @media screen and (max-width: 1024px) {
   .homepage .featured-banner {
     margin-top: 120px;
@@ -696,42 +699,23 @@ form button[type=submit]:hover {
   text-align: center;
 }
 .homepage .featured-banner .featureds-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
+  max-width: 800px;
+  margin: 0 auto;
 }
-@media screen and (max-width: 1024px) {
-  .homepage .featured-banner .featureds-container {
-    grid-template-columns: 100%;
-    justify-items: center;
-  }
-}
-.homepage .featured-banner .featureds-container .feature-card {
+.homepage .featured-banner .featureds-container .featured-card {
   border-radius: 4px;
-  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.homepage .featured-banner .featureds-container .feature-card .image {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  min-height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.homepage .featured-banner .featureds-container .featured-card .featured-card-inner {
+  padding: 30px 20px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
 }
-.homepage .featured-banner .featureds-container .feature-card .text {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+.homepage .featured-banner .featureds-container .featured-card .featured-card-inner .card-author i {
+  color: #8FFF7D;
 }
-.homepage .featured-banner .featureds-container .feature-card .text .card-title {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 0;
-}
-.homepage .featured-banner .featureds-container .feature-card .text .card-date {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 300;
+.homepage .featured-banner .featureds-container:hover {
   opacity: 0.8;
 }
 .homepage .call-to-action {
