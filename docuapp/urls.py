@@ -17,4 +17,5 @@ urlpatterns = [
     path('add_to_favorites/<int:docpost_id>/', views.AddToFavoritesView.as_view(), name='add_to_favorites'),
     path('remove-from-favorites/<int:docpost_id>/', views.RemoveFromFavoritesView.as_view(), name='remove_from_favorites'),
     path('favourites/', views.ProfileFavouritesView.as_view(), name='favourites'),
+    path('custom-login/', views.CustomLoginView.as_view(), name='custom_login'),
 ]

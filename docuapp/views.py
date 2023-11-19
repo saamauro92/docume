@@ -5,6 +5,8 @@ from .models import DocPost, Profile, User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ProfilePicForm, DocPostForm, CommentForm
 from django.http import  JsonResponse
+from allauth.account.views import LoginView
+from django.shortcuts import redirect
 
 class Home(generic.ListView): 
     """
@@ -288,7 +290,16 @@ class ProfileFavouritesView(LoginRequiredMixin, generic.ListView):
 
   
             
-
+class CustomLoginView(LoginView):
+    """
+    Helper custom login to proper redirect, example in docpost_detail.html
+    """
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        next_url = self.request.GET.get('next')
+        if next_url and next_url.startswith('/'):
+            return redirect(next_url)
+        return redirect('default_redirect_url') 
 
         
 

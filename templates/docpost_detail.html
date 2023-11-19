@@ -27,7 +27,9 @@
             {% endif %}
         </form>
          {% else %}
-     <a href="{% url 'docpost_like' docpost.slug %}?next={% url 'docpost_detail' docpost_slug%}"> <span class="text-secondary"><i class="far fa-heart"></i> </span></a>  
+         <a href="{% url 'custom_login' %}?next={% url 'docpost_detail' docpost.slug %}">
+            <span class="text-secondary"><i class="far fa-heart"></i></span>
+          </a>
 
         {% endif %}
     </div>
