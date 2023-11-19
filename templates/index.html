@@ -57,7 +57,9 @@
             class="featured-card-inner">
               <p class="card-title">{{ post.title }}</p>
               <p class="card-date">{{post.created_on|date:"D d M Y"}}</p>
-              <p class="card-author">by  <i> {{ post.author }} </i></p>
+              <div class="card-bottom">
+                <span> by</span>   <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ post.author }}</a>
+              </div>
   
           </a>
         </div>
