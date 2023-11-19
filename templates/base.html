@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DocuMe</title>
+    <title>{% block title %}DocuMe{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&display=swap"
@@ -31,7 +31,6 @@
 
   <body class="">
     <!-- Navigation -->
-
     <div class="navbar-container container">
       <a class="" href="{% url 'home' %}">
         <img

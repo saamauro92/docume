@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block title %}{{ docpost.title }} - DocuMe{% endblock %}
+ {% block content %}
 {% load crispy_forms_tags %}
 
 <section class="detail-page container">
