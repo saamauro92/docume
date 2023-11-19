@@ -200,30 +200,6 @@ body {
         position: relative;
       }
 
-      span {
-        cursor: pointer;
-        height: 1.5px;
-        width: 100%;
-        background: $primary;
-        position: absolute;
-        display: block;
-        right: 0;
-
-        &:nth-child(1) {
-          top: 0;
-        }
-
-        &:nth-child(2) {
-          top: 7px;
-          right: 0;
-          width: 10px;
-        }
-
-        &:nth-child(3) {
-          bottom: 0;
-          height: 2px;
-        }
-      }
     }
   }
 }

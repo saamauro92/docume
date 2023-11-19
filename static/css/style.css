@@ -470,27 +470,6 @@ body .navbar .login-button a {
     height: 100%;
     position: relative;
   }
-  .navbar-container button span {
-    cursor: pointer;
-    height: 1.5px;
-    width: 100%;
-    background: #8FFF7D;
-    position: absolute;
-    display: block;
-    right: 0;
-  }
-  .navbar-container button span:nth-child(1) {
-    top: 0;
-  }
-  .navbar-container button span:nth-child(2) {
-    top: 7px;
-    right: 0;
-    width: 10px;
-  }
-  .navbar-container button span:nth-child(3) {
-    bottom: 0;
-    height: 2px;
-  }
 }
 
 .mainNavbar ul {
