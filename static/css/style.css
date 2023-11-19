@@ -715,7 +715,7 @@ form button[type=submit]:hover {
 .homepage .featured-banner .featureds-container .featured-card .featured-card-inner .card-author i {
   color: #8FFF7D;
 }
-.homepage .featured-banner .featureds-container:hover {
+.homepage .featured-banner .featureds-container .featured-card:hover {
   opacity: 0.8;
 }
 .homepage .call-to-action {
@@ -773,7 +773,7 @@ form button[type=submit]:hover {
 .explore-page .featureds-container .featured-card .featured-card-inner .card-author i {
   color: #8FFF7D;
 }
-.explore-page .featureds-container:hover {
+.explore-page .featureds-container .featured-card:hover {
   opacity: 0.8;
 }
 .explore-page .subtitle {
