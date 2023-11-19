@@ -119,8 +119,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'docume.wsgi.application'
 
 SUMMERNOTE_CONFIG = {
+
     # Toolbar customization
         # https://summernote.org/deep-dive/#custom-toolbar-popover
+
+    'width': '100%',  
         'toolbar': [
             ['style', ['style']],
             ['font', ['bold', 'underline']],
