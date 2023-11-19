@@ -766,12 +766,14 @@ form {
 //----------------------------------- UPDATE_PROFILE.html
 //----------------------------------- UPDATE_DOCPOST.html
 //----------------------------------- SIGNUP_PAGE.html
-//----------------------------------- LOGIN.html
+//----------------------------------- LOGIN.html,
+//------------------------------------ERROR PAGES
 
 .update-profile,
 .update-docpost,
 .signup-page,
-.login-page {
+.login-page,
+ .error-page {
   padding-top: 40px;
 
   h1 {

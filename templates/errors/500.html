@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<section class="container error-page">
+  <h3 class=""><i class="fas fa-exclamation-triangle"></i></h3>
+  <h1>Oopss...Sorry, we couldn't find the page you are looking for.</h1>
+  <div class="">
+    <a href="{% url 'home' %}">
+      <a type="button" class="button" href="/" aria-label="">Back to home page</a>
+    </a>
+  </div>
+</section>
+
+{% endblock %}

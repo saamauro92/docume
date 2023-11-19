@@ -72,7 +72,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -735,7 +736,8 @@ form button[type=submit]:hover {
   height: auto;
   max-height: 400px;
   min-height: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .homepage .featured-banner .featureds-container .feature-card .text {
   display: flex;
@@ -774,7 +776,8 @@ form button[type=submit]:hover {
 }
 .image-container img {
   max-width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .explore-page {
@@ -803,7 +806,8 @@ form button[type=submit]:hover {
   height: auto;
   max-height: 200px;
   min-height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .explore-page .latest-container .featured-cards .latest-card .text {
   display: flex;
@@ -869,7 +873,8 @@ form button[type=submit]:hover {
   height: auto;
   max-height: 200px;
   min-height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
 }
 .explore-page .latest-container .more-container .more-card .intro .card-title {
@@ -992,13 +997,15 @@ form button[type=submit]:hover {
 .update-profile,
 .update-docpost,
 .signup-page,
-.login-page {
+.login-page,
+.error-page {
   padding-top: 40px;
 }
 .update-profile h1,
 .update-docpost h1,
 .signup-page h1,
-.login-page h1 {
+.login-page h1,
+.error-page h1 {
   margin-bottom: 20px;
 }
 
@@ -1149,6 +1156,4 @@ form button[type=submit]:hover {
 .login-page .google-section .google-button {
   display: flex;
   gap: 10px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
