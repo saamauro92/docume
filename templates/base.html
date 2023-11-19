@@ -18,14 +18,15 @@
     <script
       type="text/javascript"
       src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
+    {% compress css %}
     <link
       rel="stylesheet"
       type="text/x-scss"
       href="{% static 'scss/style.scss' %}" />
- 
+    {% endcompress %}
   </head>
 
   <body class="">
