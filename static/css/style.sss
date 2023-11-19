@@ -463,7 +463,8 @@ body .navbar .login-button a {
 .richtext h6,
 .richtext b,
 .richtext i,
-.richtext a {
+.richtext a,
+.richtext span {
   color: white !important;
   padding: 0 !important;
   margin: 9 !important;
@@ -1144,39 +1145,52 @@ form button[type=submit]:hover {
 
 .detail-page {
   padding: 60px 20px 40px 20px;
+  max-width: 800px;
 }
 
-.detail-page .header {
-  margin-bottom: 60px;
+.detail-page .header-like {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
 }
 
-.detail-page .header .post-title {
+@media screen and (max-width: 640px) {
+  .detail-page .header-like {
+    justify-content: flex-start;
+  }
+}
+.detail-page .header-like .btn-like {
+  background-color: transparent;
+}
+
+.detail-page .header-like .post-title {
   color: #8FFF7D;
 }
 
-.detail-page .header .post-title,
-.detail-page .header .post-subtitle {
-  text-align: center;
+@media screen and (max-width: 640px) {
+  .detail-page .header-like .post-title {
+    font-size: 24px !important;
+  }
+}
+.detail-page .header {
+  margin-bottom: 30px;
 }
 
 .detail-page .header .post-title {
   font-size: 3rem;
 }
 
-.detail-page .header .post-subtitle {
-  margin-top: 15px;
-  opacity: 0.8;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.detail-page .header .inner-header {
+  margin-bottom: 10px;
 }
 
-.detail-page .header .post-subtitle .add-favourites {
+.detail-page .header .add-favourites {
+  margin-top: 15px;
   display: flex;
   gap: 5px;
 }
 
-.detail-page .header .post-subtitle .add-favourites:hover {
+.detail-page .header .add-favourites:hover {
   opacity: 0.8;
 }
 

@@ -6,35 +6,43 @@
 <section class="detail-page container">
     <!-- POST CONTENT -->
     <div class="header">
-        <h1 class="post-title">{{ docpost.title }}</h1>
-    <p class="post-subtitle">{{ docpost.author }} | {{ docpost.created_on }}       
+        <div class="inner-header">
+            <p class="post-subtitle"> {{ docpost.created_on |date:"D d M Y" }}  </p>
+            <div class='header-like'>
+                <h1 class="post-title">{{ docpost.title }}</h1>
+                <div>
+                    {% if user.is_authenticated %}
+                    <form id="likeForm" data-url="{% url 'docpost_like' docpost.slug %}" method="POST" class="" role="form">
+                        {% csrf_token %}
+                    
+                        {% if liked %}
+                        <button type="submit" name="" id="likeButton" value="{{ docpost.slug }}" class="btn-like">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        {% else %}
+                        <button type="submit" name="" id="likeButton" value="{{ docpost.slug }}" class="btn-like">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        {% endif %}
+                    </form>
+                     {% else %}
+                     <a href="{% url 'custom_login' %}?next={% url 'docpost_detail' docpost.slug %}">
+                        <span class="text-secondary"><i class="far fa-heart"></i></span>
+                      </a>
+            
+                    {% endif %}
+                </div>
+            </div>
+            <p class="excerpt richtext"> {{ docpost.excerpt }} </p>
+        </div>
+        <div>
+            <a href="{% url 'public_profile' username=docpost.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ docpost.author }}</a>
+        </div>
         <a href="{% url 'add_to_favorites' docpost.id %}" class="add-favourites">
         <i class="fas fa-bookmark"></i>Add to Favorites</a>   
-     </p>
+  
      <!--  LIKE FORM-->
 
-     <div>
-        {% if user.is_authenticated %}
-        <form id="likeForm" data-url="{% url 'docpost_like' docpost.slug %}" method="POST" class="" role="form">
-            {% csrf_token %}
-        
-            {% if liked %}
-            <button type="submit" name="" id="likeButton" value="{{ docpost.slug }}" class="btn-like">
-                <i class="fas fa-heart"></i>
-            </button>
-            {% else %}
-            <button type="submit" name="" id="likeButton" value="{{ docpost.slug }}" class="btn-like">
-                <i class="far fa-heart"></i>
-            </button>
-            {% endif %}
-        </form>
-         {% else %}
-         <a href="{% url 'custom_login' %}?next={% url 'docpost_detail' docpost.slug %}">
-            <span class="text-secondary"><i class="far fa-heart"></i></span>
-          </a>
-
-        {% endif %}
-    </div>
     </div>
         <div class="card-body richtext">
             <p class="card-text">
