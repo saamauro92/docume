@@ -744,7 +744,7 @@ form button[type=submit]:hover {
 }
 
 .explore-page {
-  padding: 60px 0 40px 0;
+  padding: 60px 20px 40px 20px;
 }
 .explore-page .heading {
   text-align: center;
@@ -1001,9 +1001,13 @@ form button[type=submit]:hover {
 .profile-page .favourites-page .docs-list .docpost-card .actions form button[type=submit] {
   margin-top: unset;
 }
+.profile-page .docs-page .no-favourites a,
+.profile-page .favourites-page .no-favourites a {
+  margin-top: 20px;
+}
 
 .detail-page {
-  padding: 60px 0 40px 0;
+  padding: 60px 20px 40px 20px;
 }
 .detail-page .header {
   margin-bottom: 60px;

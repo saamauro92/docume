@@ -501,8 +501,7 @@ form {
 //----------------------------------- EXPLORE.html
 
 .explore-page {
-  padding: 60px 0 40px 0;
-
+   padding: 60px 20px 40px 20px;
   .heading {
     text-align: center;
     font-size: 3rem;
@@ -775,13 +774,19 @@ form {
         }
       }
     }
+    .no-favourites {
+      a {
+        margin-top: 20px;
+      }
+    }
   }
 }
+
 
 //----------------------------------- DOCPOST_DETAIL.html
 
 .detail-page {
-  padding: 60px 0 40px 0;
+  padding: 60px 20px 40px 20px;
 
   .header {
     margin-bottom: 60px;
