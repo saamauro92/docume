@@ -9,6 +9,28 @@
         <a href="{% url 'add_to_favorites' docpost.id %}" class="add-favourites">
         <i class="fas fa-bookmark"></i>Add to Favorites</a>   
      </p>
+     <!--  LIKE FORM-->
+
+     <div>
+        {% if user.is_authenticated %}
+        <form id="likeForm" data-url="{% url 'docpost_like' docpost.slug %}" method="POST" class="" role="form">
+            {% csrf_token %}
+        
+            {% if liked %}
+            <button type="submit" name="" id="likeButton" value="{{ docpost.slug }}" class="btn-like">
+                <i class="fas fa-heart"></i>
+            </button>
+            {% else %}
+            <button type="submit" name="" id="likeButton" value="{{ docpost.slug }}" class="btn-like">
+                <i class="far fa-heart"></i>
+            </button>
+            {% endif %}
+        </form>
+         {% else %}
+     <a href="{% url 'docpost_like' docpost.slug %}?next={% url 'docpost_detail' docpost_slug%}"> <span class="text-secondary"><i class="far fa-heart"></i> </span></a>  
+
+        {% endif %}
+    </div>
     </div>
         <div class="card-body richtext">
             <p class="card-text">
@@ -48,6 +70,44 @@
                 {% endfor %}
             </div>
         </div>
+
+        <script>
+
+            // Function to add/remove likes
+            async function makeRequest(e) {
+                e.preventDefault();
+                const form = document.getElementById('likeForm');
+                const formData = new FormData(form);
+                const url = form.getAttribute('data-url');
+        
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        body: formData,
+                        credentials: 'same-origin',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+        
+                    if (response.ok) {
+                        const data = await response.json();
+                        const likeButton = document.getElementById('likeButton');
+        
+                        if (data.status === 'ADD') {
+                            likeButton.innerHTML = '<i class="fas fa-heart"></i>';
+                        } else if (data.status === 'REMOVED') {
+                            likeButton.innerHTML = '<i class="far fa-heart"></i>';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error making request:', error);
+                }
+            }
+        
+            document.getElementById('likeForm').addEventListener('submit', makeRequest);
+        </script>
 </section>
 
 {% endblock content %}
+

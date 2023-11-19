@@ -4,6 +4,7 @@ from django.views import generic, View
 from .models import DocPost, Profile, User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ProfilePicForm, DocPostForm, CommentForm
+from django.http import  JsonResponse
 
 class Home(generic.ListView): 
     """
@@ -198,6 +199,23 @@ class UpdateDocPost(LoginRequiredMixin, generic.UpdateView):
             return super(UpdateDocPost, self).form_valid(form)
         else:
             return render(self.request, 'account/login.html')
+
+class DocPostLike(LoginRequiredMixin,View):
+    """
+    Functionality to like docposts
+    """
+
+    def post(self, request, slug):
+        post = get_object_or_404(DocPost, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'status': "REMOVED"})
+        else:
+            post.likes.add(request.user)
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'status': "ADD"})
 
 class UpdateProfile(LoginRequiredMixin, generic.UpdateView):
     """
