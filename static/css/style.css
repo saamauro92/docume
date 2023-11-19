@@ -466,6 +466,11 @@ body .navbar .login-button a {
   text-decoration: underline !important;
 }
 
+.user-tag {
+  font-style: italic;
+  color: #8FFF7D;
+}
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -732,9 +737,6 @@ form button[type=submit]:hover {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
 }
-.homepage .featured-banner .featureds-container .featured-card .featured-card-inner .card-author i {
-  color: #8FFF7D;
-}
 .homepage .featured-banner .featureds-container .featured-card:hover {
   opacity: 0.8;
 }
@@ -778,20 +780,29 @@ form button[type=submit]:hover {
 .explore-page .featureds-container .featured-card {
   border-radius: 4px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+}
+@media screen and (max-width: 640px) {
+  .explore-page .featureds-container .featured-card {
+    grid-template-columns: 100%;
+  }
 }
 .explore-page .featureds-container .featured-card .featured-card-inner {
   padding: 30px 20px;
   border-radius: 4px;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
 }
 @media screen and (max-width: 640px) {
   .explore-page .featureds-container .featured-card .featured-card-inner {
     grid-template-columns: 100%;
   }
 }
-.explore-page .featureds-container .featured-card .featured-card-inner .card-author i {
-  color: #8FFF7D;
+.explore-page .featureds-container .featured-card .featured-card-inner .card-bottom {
+  display: flex;
+  border: 1px solid white;
 }
 .explore-page .featureds-container .featured-card:hover {
   opacity: 0.8;

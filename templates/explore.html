@@ -12,8 +12,10 @@
               <a href="{% url 'docpost_detail' post.slug %}" class="featured-card-inner">
                 <p class="card-title">{{ post.title }}</p>
                 <p class="card-date">{{ post.created_on|date:"D d M Y" }}</p>
-                <p class="card-author">by <i>{{ post.author }}</i></p>
               </a>
+              <div class="card-bottom">
+                <span> by</span>   <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ post.author }}</a>
+              </div>
             </div>
           {% endif %}
         {% endfor %}
@@ -30,7 +32,9 @@
                 <div class="intro">
                   <h4 class="card-title">{{ post.title }}</h4>
                   <p class="card-text">{{ post.excerpt }}</p>
-                  <p class="card-bottom">{{ post.created_on }} by <i>{{ post.author }}</i></p>
+                <span> {{ post.created_on }}</span> <span> by</span>  <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ post.author }}</a>
+                
+
                 </div>
               </a>
             </div>

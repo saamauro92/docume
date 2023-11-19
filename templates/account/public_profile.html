@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="profile-page container">
+  <section class="profile">
+    <div class="profile-grid">
+      <div class="content-section">
+        <h1 class="profile-title">{{ user_profile.user }}</h1>
+        <p>{{ user_profile.name }}</p>
+        <p>{{ user_profile.email }}</p>
+        <p>{{ user_profile.title }}</p>
+        <span>Birthdate: {{ user_profile.birth_date }} </span>
+        <div class="bio">{{ user_profile.bio|safe }}</div>
+      </div>
+      <div class="image-container">
+        {% autoescape off %} {% endautoescape %} 
+        {% if "placeholder" in user_profile.image.url %}
+        <img
+          src="https://res.cloudinary.com/dtycp96d8/image/upload/v1699567764/he7p20dklbt6lvtnmm38.png"
+          class="image" />
+        {% else %}
+        <img src="{{ user_profile.image.url }}" class="image" />
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

@@ -109,6 +109,24 @@ class ProfileView(LoginRequiredMixin, View):
                           
                              }
                            )
+
+
+class PublicProfileView(LoginRequiredMixin, View):
+    """
+    Class that displays a simplified version of the user's profile information
+    """
+    def get(self, request, username, *args, **kwargs):
+        user_profile = get_object_or_404(Profile, user__username=username)
+
+        return render(
+            request,
+            'account/public_profile.html',
+            {
+                "user_profile": user_profile,
+            }
+        )
+        
+
         
 class ProfileDocsView(LoginRequiredMixin, View): 
     """
@@ -128,8 +146,6 @@ class ProfileDocsView(LoginRequiredMixin, View):
                           
                              }
                            )
-        
-
         
 class CreateDocPost(LoginRequiredMixin,generic.CreateView):
     """
@@ -250,7 +266,6 @@ class ProfileFavouritesView(LoginRequiredMixin, generic.ListView):
             profile = get_object_or_404(Profile, user=current_user)
             return profile.favourites.all()
         return []
-
 
 
   
