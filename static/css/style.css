@@ -611,7 +611,8 @@ body .navbar .login-button a {
 }
 
 form {
-  max-width: 380px;
+  max-width: 580px;
+  border: 1px solid white;
 }
 form input {
   height: 40px;
