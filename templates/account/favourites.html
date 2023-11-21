@@ -27,7 +27,7 @@
       </li>
     </ul>
   </nav>
-
+<!-- FAVOURITES -->
   <section class="favourites-page">
     <div class="docs-list">
       {% if favourites %} {% for favourite in favourites %}
@@ -46,7 +46,7 @@
             onsubmit="deletePost()"
           >
             {% csrf_token %}
-            <button type="submit"><i class="fas fa-trash-alt"></i></button>
+            <button type="submit" aria-label="submit"> <i class="fas fa-trash-alt"></i></button>
           </form>
           </div>
           <div class="actions"></div>
@@ -54,10 +54,10 @@
       </a>
       {% endfor %} 
       {% else %}
-<div class="no-favourites">
-  <p> You have no favourites added at the moment.</p>
-  <a href="{% url 'explore' %}" class="button">Explore Docs</a>
-</div>
+    <div class="no-favourites">
+      <p> You have no favourites added at the moment.</p>
+      <a href="{% url 'explore' %}" class="button" aria-label="Go to explore docs page">Explore Docs</a>
+    </div>
       {% endif %}
     </div>
   </section>
