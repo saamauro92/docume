@@ -24,34 +24,32 @@
       </li>
     </ul>
   </nav>
-
+<!-- PROFILE INFORMATION -->
   <section class="profile">
     <div class="profile-grid">
       <div class="content-section">
         <h1 class="profile-title">{{ profile.user }}</h1>
-
         <p>{{ profile.name }} </p>        
         <p>{{ profile.email }}</p>
         <p>{{ profile.title }}</p>
-
         <span>Birthdate: {{ profile.birth_date }} </span>
-
         <div class="bio">{{ profile.bio|safe }}</div>
       </div>
-
       <div class="image-container">
         {% autoescape off %} {% endautoescape %} 
         {% if "placeholder" in profile.image.url %}
         <img
           src="https://res.cloudinary.com/dtycp96d8/image/upload/v1699567764/he7p20dklbt6lvtnmm38.png"
+          alt="Profile placholder image of {{ profile.user }}"
           class="image" />
         {% else %}
-        <img src="{{ profile.image.url }}" class="image" />
+        <img src="{{ profile.image.url }}" 
+        alt="Profile image of {{ profile.user }}"
+        class="image" />
         {% endif %}
       </div>
     </div>
-
-    <a href="{% url 'update_profile' profile.user.id %}" class="button">
+    <a href="{% url 'update_profile' profile.user.id %}" class="button" aria-label="Go to update profile page">
       Update Profile ></a
     >
   </section>

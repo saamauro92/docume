@@ -18,9 +18,13 @@
         {% if "placeholder" in user_profile.image.url %}
         <img
           src="https://res.cloudinary.com/dtycp96d8/image/upload/v1699567764/he7p20dklbt6lvtnmm38.png"
-          class="image" />
+          class="image"
+          alt="Profile placholder image of {{ user_profile.user }}"
+           />
         {% else %}
-        <img src="{{ user_profile.image.url }}" class="image" />
+        <img src="{{ user_profile.image.url }}" 
+         alt="Profile image of {{ user_profile.user }}"
+         class="image" />
         {% endif %}
       </div>
     </div>
