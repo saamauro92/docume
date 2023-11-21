@@ -8,7 +8,7 @@
         {% for post in docpost_list %}
           {% if forloop.counter <= 3 %}
             <div class="featured-card">
-              <a href="{% url 'docpost_detail' post.slug %}" class="featured-card-inner">
+              <a href="{% url 'docpost_detail' post.slug %}" aria-label="Go to {{post.title}}" class="featured-card-inner">
                 <p class="card-title">{{ post.title }}</p>
                 <p class="card-date">{{ post.created_on|date:"D d M Y" }}</p>
               </a>
@@ -18,9 +18,7 @@
             </div>
           {% endif %}
         {% endfor %}
-
         </div>
-      
         <!-- OTHER POSTS -->
         <h3 class="subtitle">More</h3>
         <div class="more-container">
@@ -38,8 +36,6 @@
             {% endif %}
           {% endfor %}
         </div>
-
       </div>
-
   </div>
 {% endblock %}
