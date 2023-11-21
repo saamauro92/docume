@@ -1,110 +1,430 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+# DocuMe
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+  
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Overview
 
-## Gitpod Reminders
+  
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+[DocuMe](https://docume-6885a52f1f5c.herokuapp.com/)   is a documentation/blog designed for users that would like to have  a convenient platform to store and manage their code snippets and or any documentation. 
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Table of Contents
 
-Another blue button should appear to click: _Open Browser_.
+  
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<details>
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+- [User stories](#user-stories)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [Wireframes](#wireframes)
 
-To log into the Heroku toolbelt CLI:
+</details>
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<details>
 
-------
+<summary>Features</summary>
 
-## Release History
+  
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- [Features Section](#features-section)
+   - [Nabvar](#navbar)
+   - [Home Banner](#home-banner)
+   - [Call To Action](#call-to-action)
+   - [Footer](#footer)
+   - [Profile (Authenticated only) ](#profile-section)
+   - [Docs (Authenticated only)](#docs-section)
+   - [Favourites (Authenticated only)](#favourites-section)
 
-**September 20 2023:** Update Python version to 3.9.17.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+</details>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<details>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<summary>Database Schema</summary>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- [Database Schema](#database-schema)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+</details>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+<details>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+<summary>Technologies</summary>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  
 
-------
+- [Technologies Section](#technologies-section)
 
-## FAQ about the uptime script
+- [Programming Languages](#programming-languages)
 
-**Why have you added this script?**
+- [Other Tools](#other-tools)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  
 
-**How will this affect me?**
+</details>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+  
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+<details>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<summary>Testing</summary>
 
-**So….?**
+  
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- [Testing Documentation](#testing)
 
-**Can I opt out?**
+</details>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<details>
 
-**Anything more?**
+<summary>Deployment</summary>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+  
 
----
+- [How to provision a PostGres database on Heroku](#how-to-publish-to-heroku)
 
-Happy coding!
+- [How to deploy to Heroku](#how-to-publish-to-heroku)
+
+- [How to fork this repository](#how-to-fork-this-repository)
+
+- [How to open this project locally](#how-to-open-this-project-locally)
+
+</details>
+
+  
+
+<details>
+
+<summary>Credits</summary>
+
+  
+
+- [Credits section](#credits-section)
+
+- [Images](#images)
+
+</details>
+
+  
+
+<details>
+
+<summary>Acknowledgements</summary>
+
+  
+
+- [Acknowledgements section](#acknowledgements-section)
+
+- [Design](#design)
+
+- [Code](#code)
+
+</details>
+
+  
+
+## Wireframes 
+
+![homepage](readme/index.png)
+![explore](readme/explore.png)
+![profile](readme/profile.png)
+![docs](readme/docs.png)
+![create](readme/create-doc.png)
+
+### User stories
+
+  
+[USER STORY: Account Registration#1](https://github.com/saamauro92/docume/issues/1)
+
+As a **Site user** I can **register an account** so that **I can create documents and save documents to favourites**
+
+[USER STORY: Create Documentation#2](https://github.com/saamauro92/docume/issues/2)
+
+As a **Site User** I can **create documents** so that **I can save them and see them**
+  
+[USER STORY: Manage docs#3](https://github.com/saamauro92/docume/issues/3)
+
+As a **Site admin** I can **create, read, update and delete documentation ** so that **I can manage my content**
+
+[USER STORY: View public documents#4](https://github.com/saamauro92/docume/issues/4)
+  
+As a **Site User** I can **view a list of public documents** so that **I can select one to read**
+
+[USER STORY: Open a doc#5](https://github.com/saamauro92/docume/issues/5)
+
+As a **Site User** I can **click on a public doc** so that **I can read the full document**
+
+[USER STORY: Comment on docs#6](https://github.com/saamauro92/docume/issues/6)
+
+As a **Site User** I can **leave comments on a doc** so that **I can be involved in the conversation or leave a feedback**
+
+
+[USER STORY: View comments#7](https://github.com/saamauro92/docume/issues/7)
+
+As a **Site User** I can **view comment on an individual doc ** so that **I can read conversation or feedbacks**
+
+[USER STORY: Add to favourites#8](https://github.com/saamauro92/docume/issues/8)
+
+As a **Site User** I can **add to favourite individual public docs** so that **read them or save them for later**
+
+[USER STORY: Add image to profile#9](https://github.com/saamauro92/docume/issues/9)
+
+As a **user** I can **add a new profile image to my account** so that **be identified with the picture**
+
+[USER STORY: Delete post from profile view#10](https://github.com/saamauro92/docume/issues/10)
+
+As a **User** I can **Delete documents from my profile** so that **manage which ones I want or not**
+
+[USER STORY: Update profile information#11](https://github.com/saamauro92/docume/issues/11)
+
+As a **User** I can **update personal information** so that **manage my account information**
+
+[USER STORY: CRUD documentation#12](https://github.com/saamauro92/docume/issues/12)
+
+As a Site User I can **create, read, update and delete documentation ** so that I can manage my content
+
+
+## Features
+ 
+#####  Navbar
+  
+- This feature will display the website logo as a link and also contain two list menus. One is for unauthenticated users, allowing them to explore posts, sign in, or register. The other is for authenticated users, allowing them to explore posts and navigate to their profile, docs, favorites, and to log out. 
+
+ ![navbar](https://github.com/saamauro92/docume/raw/main/readme/navbar.png)
+
+
+#####  Home Banner
+  
+- This section will display a header description and image, along with 'Explore' and 'Log In' buttons. The 'Log In' button will disappear if the user is authenticated . 
+
+ 
+ ![homebanner](https://raw.githubusercontent.com/saamauro92/docume/main/readme/home-banner.png?token=GHSAT0AAAAAACJUSDZSMWCPUCN6YW5MELXMZK5BRJA)
+
+
+#####   Call To Action
+  
+- This section will display a description and a call to action button to sign up or to create a doc post for authenticated users . 
+
+ ![cta](https://github.com/saamauro92/docume/raw/main/readme/cta.png)
+
+#####   Footer
+  
+- This section will display the website logo as a link, a subheader, and also contain two list menus. One is for unauthenticated users, allowing them to explore posts, sign in, or register. The other is for authenticated users, allowing them to explore posts and navigate to their profiles, docs, favorites, and to log out. Additionally, it will display the 'all rights reserved' notice for the website
+
+ ![footer](https://github.com/saamauro92/docume/raw/main/readme/footer.png)
+
+#####   Profile Section  
+  (Authenticated users only)
+- This section will display the user's profile information and a placeholder image if no image was added. Additionally, it will include a button for updating the profile.
+
+ ![profile-section](https://github.com/saamauro92/docume/raw/main/readme/profile-section.png)
+
+#####   Docs Section 
+  (Authenticated users only)
+- This section will display the user's own doc posts on their profile, allowing access to view, update, or delete them
+
+ ![docs](https://github.com/saamauro92/docume/raw/main/readme/docs-section.png)
+ 
+#####   Favourites Section 
+  (Authenticated users only)
+- This section will display the user's favourites doc posts, allowing access to view and delete them.
+
+ ![favourites](https://github.com/saamauro92/docume/raw/main/readme/favourites-section.png)
+
+  
+
+#### Content structure
+
+  
+
+
+  
+
+#### Features Left to Implement
+
+- I would like users to be able to log in with GitHub and Facebook.
+- I would like users to be able to change the code editor in the forms.
+
+  
+
+## Database Schema
+  
+
+## Technologies
+  
+- Python
+
+The Python framework [Django](https://www.djangoproject.com/) was used to create this project, following the Model-View-Template design pattern.
+
+- Elephantsql
+
+The relational database used in this application.
+
+- HTML5
+
+Markup language used across the app.
+
+- CSS3
+
+- SASS
+
+CSS preprocessor.
+
+- JavaScript
+
+ 
+
+### Other Tools
+
+  
+- GitHub
+
+Used to store this project's source code.
+
+- Heroku
+
+Used to host this app.
+
+- Visual Studio Code
+
+IDE.
+
+- Figma
+
+Designs
+
+## Testing
+
+
+### Manual testing
+ ![tests](https://badgen.net/badge/all/pass/green)
+
+
+  
+| Feature | Expect | Action | Result | Pass/Fail |
+|--|--|--|--|--|
+| Navbar| When selecting each link will redirect to the correct page | selected explore docs , profile, docs, favourite and signin/signup | redirect correctly |:heavy_check_mark:|
+| Home  Banner | When click on links they will redirect appropiately | Clicked in explore docs and sign up links/buttons  | When clicked, the links will redirect appropriately |:heavy_check_mark:|
+| Add Recipe by name input| When typing and entering any string will start preparing the recipe | typed a string  | action perfectly executed |:heavy_check_mark:|
+| Call to action banner | Click on the link will redirect appropiately | clicked on available link   | link redirected appropiately |:heavy_check_mark:|
+| Add Recipe by ingredient input| When typing and entering any string will display the secondary menu | typed a string  | secondary menu displayed |:heavy_check_mark:|
+| Footer| When selecting each link will redirect to the correct page| selected explore docs , profile, docs, favourite and signin/signup | redirect correctly |:heavy_check_mark:|
+| Profile Page | when select on update profile will redirect to the form page | selected update profile button  | redirect correctly to update profile page |:heavy_check_mark:|
+| Update Profile Form | After completing the form, clicking the 'Update Profile' button should update the user's information | completed form and click on update profile  | successfully updated |:heavy_check_mark:|
+| Docs Page| When any link is selected, it will redirect appropriately. Additionally, if you select to delete a doc post a confirmation popup will appear.  | selected each link , and selected delete post  | all the actions are working perfectly |:heavy_check_mark:|
+| Create Post Form | After completing the form, clicking the 'Create Post' button should create a new docpost | completed form and click on create post  | successfully created |:heavy_check_mark:|
+| Update Post Form | After completing the form, clicking the 'Update Post' button should update the docpost | completed form and click on update post  | successfully updated |:heavy_check_mark:|
+| Favourite Page| When click in the delete post button a confirmation popup will appear  | clicked in delete post  | popup appeared and click 'ok' to confirm will delete post |:heavy_check_mark:|
+
+
+
+## Deployment
+
+  
+
+### How to deploy to Heroku
+
+  
+Installing Heroku on your project:
+
+1. Create app on Heroku website
+
+2. Make sure your project has requirements.txt file so Heroku knows which dependencies to install. To create one ``pip3 freeze --local > requirements.txt``
+
+3. Install Heroku on your project ``npm install -g heroku``
+
+4. Before pushing to Heroku, use the command git remote -v and see that only github links are listed
+
+5. Add your project to heroku with the command ``git remote add heroku project-link``. Project link can be found at your Heroku app > Settings > Heroku git URL
+
+7. Push to heroku ``git push -u heroku master``
+
+8. Create procfile ``echo web: python run.py > Procfile``, then ``git add -A``, ``git commit -m "Add Procfile"``, ``git push``
+
+9. If your project uses any keys hidden on the gitignore file, go to Heroku and add them there in Settings > Config Vars
+
+  
+ 
+  
+  
+
+## Credits
+
+  - Code institute student program
+  
+
+### Tutorials/Documentation
+
+[Djangoproject.com](https://www.djangoproject.com/)
+[Sass and Media Queries - DEV Community](https://dev.to/paul_duvall/sass-and-media-queries-hb2)
+
+[How To Authenticate Django Apps using django-allauth | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-authenticate-django-apps-using-django-allauth)
+
+[python - Django link to a specific users profile page - Stack Overflow](https://stackoverflow.com/questions/72931638/django-link-to-a-specific-users-profile-page)
+
+[User authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/dev/topics/auth/#storing-additional-information-about-users)
+
+[python - get user profile in django - Stack Overflow](https://stackoverflow.com/questions/13460426/get-user-profile-in-django)
+
+[AllAuth](https://docs.allauth.org/en/latest/)
+
+[Using the Django authentication system | Django documentation | Django](https://docs.djangoproject.com/en/4.2/topics/auth/default/)
+
+[Dynamic Page Titles in Django](https://iheanyi.com/journal/2020/04/04/dynamic-page-titles-in-django/)
+
+[User Registration in Django using Google OAuth | Engineering Education (EngEd) Program | Section](https://www.section.io/engineering-education/django-google-oauth/)
+
+[LOGOUT DEF](https://stackoverflow.com/questions/18875002/django-csrf-verification-failed-while-logout)
+
+[How To Create Tabs](https://www.w3schools.com/howto/howto_js_tabs.asp)
+
+[A Django Blog In VS Code — Upload Profile Picture | by J3 | Jungletronics | Medium](https://medium.com/jungletronics/a-django-blog-in-vs-code-6dee94cec9c0)
+
+[(228) Upload Profile Pic Form - Django Wednesdays Twitter #13 - YouTube](https://www.youtube.com/watch?v=_P_-gum7rio)
+
+[(228) Image File Upload to User Profile Model | Django (3.0) Crash Course Tutorials (pt 17) - YouTube](https://www.youtube.com/watch?v=aNk2CAkHvlE)
+
+[Forms have never been this crispy — django-crispy-forms 2.0 documentation](https://django-crispy-forms.readthedocs.io/en/latest/)
+
+[The web framework for perfectionists with deadlines | Django](https://www.djangoproject.com/)
+
+[python - How can I set a DateField format in django from the model? - Stack Overflow](https://stackoverflow.com/questions/30911612/how-can-i-set-a-datefield-format-in-django-from-the-model)
+
+[datetime - DateField in Django Forms shows like simple text input - Stack Overflow](https://stackoverflow.com/questions/68693455/datefield-in-django-forms-shows-like-simple-text-input)
+
+[python - How to auto generate slug from my Album model in django 2.0.4 - Stack Overflow](https://stackoverflow.com/questions/50436658/how-to-auto-generate-slug-from-my-album-model-in-django-2-0-4)
+
+[CSS Dropdowns](https://www.w3schools.com/css/css_dropdowns.asp)
+
+[Fly-out Menus | Web Accessibility Initiative (WAI) | W3C](https://www.w3.org/WAI/tutorials/menus/flyout/)
+
+[Custom code editor in Django admin](https://mrcoffee.io/blog/code-editor-django-admin)
+
+[css - JavaScript display none after CSS3 animation - Stack Overflow](https://stackoverflow.com/questions/18601648/javascript-display-none-after-css3-animation)
+
+[How to compile SASS/SCSS files when deploying a Django app to Heroku](https://vitorbaptista.com/how-to-compile-sass-scss-files-when-deploying-django-to-heroku?fbclid=IwAR2Up6cXvXhoLYFAVhmtr0AX-ezk1DHK9BEykJSuhUD5XwTEFMgUHAECYoc)
+
+[Compile SASS/SCSS files on Heroku in Django app - Stack Overflow](https://stackoverflow.com/questions/55763732/compile-sass-scss-files-on-heroku-in-django-app)
+
+[drpancake/heroku-buildpack-django-sass - Buildpacks - Heroku Elements](https://elements.heroku.com/buildpacks/drpancake/heroku-buildpack-django-sass)
+
+[django - The directory '/static/' in the STATICFILES_DIRS setting does not exist. (Visual Studio) - Stack Overflow](https://stackoverflow.com/questions/71278346/the-directory-static-in-the-staticfiles-dirs-setting-does-not-exist-visual)
+
+[Dynamic page titles in Django - Forge](https://www.forgepackages.com/guides/page-titles/)
