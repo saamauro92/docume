@@ -1,6 +1,7 @@
 {% extends "base.html" %} 
 {% block title %}Create Post - DocuMe{% endblock %}
 {% block content %}
+<!-- Create Post Form -->
 <section class="container create-post">
   <div class="back-button">
     <a href="{% url 'docs' %}"  aria-label="Redirect to users Docs"><i class="fas fa-long-arrow-alt-left"></i>Back to Docs</a>
@@ -8,7 +9,7 @@
   <h1>Create Post</h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Create Post</button>
+    <button type="submit" aria-label="Create Post button">Create Post</button>
   </form>
 </section>
 
