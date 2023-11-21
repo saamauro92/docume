@@ -225,7 +225,12 @@ IDE.
 
 - Figma
 
+
 Designs
+
+ - [StackEdit](https://stackedit.io/)
+
+ to write README
 
 ## Testing
 
@@ -298,31 +303,58 @@ Log into Heroku
 ### Tutorials/Documentation
 
 [Djangoproject.com](https://www.djangoproject.com/)
+
 [Sass and Media Queries - DEV Community](https://dev.to/paul_duvall/sass-and-media-queries-hb2)
 [How To Authenticate Django Apps using django-allauth | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-authenticate-django-apps-using-django-allauth)
+
 [python - Django link to a specific users profile page - Stack Overflow](https://stackoverflow.com/questions/72931638/django-link-to-a-specific-users-profile-page)
+
 [User authentication in Django | Django documentation | Django](https://docs.djangoproject.com/en/dev/topics/auth/#storing-additional-information-about-users)
+
 [python - get user profile in django - Stack Overflow](https://stackoverflow.com/questions/13460426/get-user-profile-in-django)
+
 [AllAuth](https://docs.allauth.org/en/latest/)
+
 [Using the Django authentication system | Django documentation | Django](https://docs.djangoproject.com/en/4.2/topics/auth/default/)
+
 [Dynamic Page Titles in Django](https://iheanyi.com/journal/2020/04/04/dynamic-page-titles-in-django/)
+
 [User Registration in Django using Google OAuth | Engineering Education (EngEd) Program | Section](https://www.section.io/engineering-education/django-google-oauth/)
+
 [LOGOUT DEF](https://stackoverflow.com/questions/18875002/django-csrf-verification-failed-while-logout)
+
 [How To Create Tabs](https://www.w3schools.com/howto/howto_js_tabs.asp)
+
 [A Django Blog In VS Code — Upload Profile Picture | by J3 | Jungletronics | Medium](https://medium.com/jungletronics/a-django-blog-in-vs-code-6dee94cec9c0)
+
 [(228) Upload Profile Pic Form - Django Wednesdays Twitter #13 - YouTube](https://www.youtube.com/watch?v=_P_-gum7rio)
+
 [(228) Image File Upload to User Profile Model | Django (3.0) Crash Course Tutorials (pt 17) - YouTube](https://www.youtube.com/watch?v=aNk2CAkHvlE)
+
 [Forms have never been this crispy — django-crispy-forms 2.0 documentation](https://django-crispy-forms.readthedocs.io/en/latest/)
+
 [The web framework for perfectionists with deadlines | Django](https://www.djangoproject.com/)
+
 [python - How can I set a DateField format in django from the model? - Stack Overflow](https://stackoverflow.com/questions/30911612/how-can-i-set-a-datefield-format-in-django-from-the-model)
+
 [datetime - DateField in Django Forms shows like simple text input - Stack Overflow](https://stackoverflow.com/questions/68693455/datefield-in-django-forms-shows-like-simple-text-input)
+
 [python - How to auto generate slug from my Album model in django 2.0.4 - Stack Overflow](https://stackoverflow.com/questions/50436658/how-to-auto-generate-slug-from-my-album-model-in-django-2-0-4)
+
 [CSS Dropdowns](https://www.w3schools.com/css/css_dropdowns.asp)
+
 [Fly-out Menus | Web Accessibility Initiative (WAI) | W3C](https://www.w3.org/WAI/tutorials/menus/flyout/)
+
 [Custom code editor in Django admin](https://mrcoffee.io/blog/code-editor-django-admin)
+
 [css - JavaScript display none after CSS3 animation - Stack Overflow](https://stackoverflow.com/questions/18601648/javascript-display-none-after-css3-animation)
+
 [How to compile ASS/SCSS files when deploying a Django app to Heroku](https://vitorbaptista.com/how-to-compile-sass-scss-files-when-deploying-django-to-heroku?fbclid=IwAR2Up6cXvXhoLYFAVhmtr0AX-ezk1DHK9BEykJSuhUD5XwTEFMgUHAECYoc)
+
 [Compile SASS/SCSS files on Heroku in Django app - Stack Overflow](https://stackoverflow.com/questions/55763732/compile-sass-scss-files-on-heroku-in-django-app)
+
 [drpancake/heroku-buildpack-django-sass - Buildpacks - Heroku Elements](https://elements.heroku.com/buildpacks/drpancake/heroku-buildpack-django-sass)
+
 [django - The directory '/static/' in the STATICFILES_DIRS setting does not exist. (Visual Studio) - Stack Overflow](https://stackoverflow.com/questions/71278346/the-directory-static-in-the-staticfiles-dirs-setting-does-not-exist-visual)
+
 [Dynamic page titles in Django - Forge](https://www.forgepackages.com/guides/page-titles/)
