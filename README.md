@@ -1,4 +1,3 @@
-
 # DocuMe
 
   
@@ -14,22 +13,13 @@
 
   
 
-<details>
-
-
 - [User stories](#user-stories)
 
 - [Wireframes](#wireframes)
-
-</details>
-
   
-
 <details>
 
 <summary>Features</summary>
-
-  
 
 - [Features Section](#features-section)
    - [Nabvar](#navbar)
@@ -43,109 +33,36 @@
 
 
   
-
-</details>
-
-  
-
-<details>
-
-<summary>Database Schema</summary>
-
   
 
 - [Database Schema](#database-schema)
 
-  
 
-</details>
-
-  
-
-<details>
-
-<summary>Technologies</summary>
-
-  
-
-- [Technologies Section](#technologies-section)
-
-- [Programming Languages](#programming-languages)
+- [Technologies](#technologies)
 
 - [Other Tools](#other-tools)
 
   
 
-</details>
+- [Testing ](#testing)
+
+
+
+- [Deployment](#deployment)
+
+
+- [Credits](#credits)
+
 
   
-
-<details>
-
-<summary>Testing</summary>
-
-  
-
-- [Testing Documentation](#testing)
-
-</details>
-
-  
-
-<details>
-
-<summary>Deployment</summary>
-
-  
-
-- [How to provision a PostGres database on Heroku](#how-to-publish-to-heroku)
-
-- [How to deploy to Heroku](#how-to-publish-to-heroku)
-
-- [How to fork this repository](#how-to-fork-this-repository)
-
-- [How to open this project locally](#how-to-open-this-project-locally)
-
-</details>
-
-  
-
-<details>
-
-<summary>Credits</summary>
-
-  
-
-- [Credits section](#credits-section)
-
-- [Images](#images)
-
-</details>
-
-  
-
-<details>
-
-<summary>Acknowledgements</summary>
-
-  
-
-- [Acknowledgements section](#acknowledgements-section)
-
-- [Design](#design)
-
-- [Code](#code)
-
-</details>
-
   
 
 ## Wireframes 
 
 ![homepage](readme/index.png)
 ![explore](readme/explore.png)
-![profile](readme/profile.png)
-![docs](readme/docs.png)
+![profile](readme/Profile.png)
+![docs](readme/Docs.png)
 ![create](readme/create-doc.png)
 
 ### User stories
@@ -215,7 +132,7 @@ As a Site User I can **create, read, update and delete documentation ** so that 
 - This section will display a header description and image, along with 'Explore' and 'Log In' buttons. The 'Log In' button will disappear if the user is authenticated . 
 
  
- ![homebanner](https://raw.githubusercontent.com/saamauro92/docume/main/readme/home-banner.png?token=GHSAT0AAAAAACJUSDZSMWCPUCN6YW5MELXMZK5BRJA)
+  ![homebanner](https://github.com/saamauro92/docume/raw/main/readme/home-banner.png)
 
 
 #####   Call To Action
