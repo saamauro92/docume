@@ -15,10 +15,10 @@
 ## Table of Contents
 
   
+- [Wireframes](#wireframes)
 
 - [User stories](#user-stories)
 
-- [Wireframes](#wireframes)
   
 
 - [Features Section](#features-section)
