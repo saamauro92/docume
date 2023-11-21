@@ -72,8 +72,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -783,8 +782,7 @@ form button[type=submit]:hover {
 }
 .image-container img {
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .explore-page {
@@ -1193,4 +1191,6 @@ form button[type=submit]:hover {
 .login-page .google-section .google-button {
   display: flex;
   gap: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
