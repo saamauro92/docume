@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% load i18n %} 
 {% block title %} Sign Up - DocuMe{% endblock %}
  {% block content %}
+ <!-- SIGN UP  FORM -->
 <div class="container signup-page">
   <div class="">
     <h1>{% trans "Sign Up" %}</h1>
@@ -17,7 +18,7 @@
         name="{{ redirect_field_name }}"
         value="{{ redirect_field_value }}" />
       {% endif %}
-      <button class="button" type="submit">
+      <button class="button" type="submit" aria-label="Sign up button">
         {% trans "Sign Up" %} &raquo;
       </button>
     </form>
