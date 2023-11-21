@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Update Doc- DocuMe{% endblock %}
 {% block content %}
-
+<!-- UPDATE DOCPOST FORM -->
 <section class="container update-docpost">
   <div class="back-button">
     <a href="{% url 'docs' %}" aria-label="Redirect to users Docs"> <i class="fas fa-long-arrow-alt-left"></i> Back to Docs</a>
@@ -10,8 +10,7 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Update Post</button>
+    <button type="submit" aria-label="update post">Update Post</button>
   </form>
 </section>
-
 {% endblock %}

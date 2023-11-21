@@ -16,7 +16,7 @@
             >Login in / Sign Up</a
           >
           {% endif %}
-          <a href="{% url 'explore' %}" class="button">Explore Docs</a>
+          <a href="{% url 'explore' %}" class="button" aria-label="Go to explore docs">Explore Docs</a>
         </div>
       </div>
       <div class="image-container">
@@ -24,21 +24,17 @@
       </div>
     </div>
   </section>
-
-
   <!--   CALL TO ACTION BANNER -->
   <section class="call-to-action">
     <div class="container">
       <h4 class="title">Advance Your Code Journey: Save, Share, Elevate</h4>
       {% if user.is_authenticated != True %}
-      <a href="{% url 'account_login' %}" class="button signup"> Sign Up</a>
+      <a href="{% url 'account_login' %}" class="button signup" aria-label="Go to Sign up page"> Sign Up</a>
       {% else %}
-      <a href="{% url 'create_post' %}" class="button signup"> Create Doc</a>
-
+      <a href="{% url 'create_post' %}" class="button signup" aria-label="Go to Create Doc page "> Create Doc</a>
       {% endif %}
     </div>
   </section>
-
     <!--  FEATURED BANNER -->
     <section class="container featured-banner">
       <h2 class="title">Store, Share & Repeat</h2>
@@ -46,7 +42,6 @@
         Save your post or anyones post to visit later, and you can even publish
         and share them with the world
       </p>
-  
       <div class="featureds-container">
         <h4 class="container">Latests</h4>
         {% for post in docpost_list %} {% if forloop.counter <= 5 %}
@@ -54,7 +49,9 @@
         <div class="featured-card">
           <a
             href="{% url 'docpost_detail' post.slug  %}"
-            class="featured-card-inner">
+            class="featured-card-inner"
+            aria-label="Go to {{ post.title }}"
+            >
               <p class="card-title">{{ post.title }}</p>
               <p class="card-date">{{post.created_on|date:"D d M Y"}}</p>
               <div class="card-bottom">
@@ -63,10 +60,8 @@
   
           </a>
         </div>
-  
         {% endif %} {% endfor %}
       </div>
     </section>
 </section>
-
 {% endblock %}
