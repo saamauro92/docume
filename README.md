@@ -176,13 +176,11 @@ As a Site User I can **create, read, update and delete documentation ** so that 
 #### Features Left to Implement
 
 - I would like users to be able to log in with GitHub and Facebook.
-- I would like users to be able to change the code editor in the forms.
-- I would like users to be able to change the code editor in the forms.
-
-- I would like to add a live likes counter.
+- I would like users to have a code editor in the create doc post form.
+- I would like to add a likes live counter.
 
  ## Known Bugs
- - Mobile version: When click on profile links they will not display
+ - Mobile version: When click on profile links menu it will not show up.
 
 ## Database Schema
 
