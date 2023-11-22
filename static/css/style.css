@@ -361,9 +361,10 @@ p {
 }
 
 body {
-  background-color: #3e3e3e;
   font-family: Inter, sans-serif;
   color: #ffffff;
+  background: rgb(86, 86, 86);
+  background: linear-gradient(90deg, rgb(86, 86, 86) 0%, rgb(59, 59, 59) 18%, rgb(41, 41, 41) 48%, rgb(31, 31, 31) 70%);
 }
 body .navbar {
   display: grid;
@@ -662,10 +663,17 @@ form button[type=submit]:hover {
   padding: 0;
 }
 .homepage .homebanner {
-  height: 70vh;
+  height: 60vh;
+  padding-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .homepage .homebanner {
+    height: 70vh;
+    padding-bottom: 80px;
+  }
 }
 .homepage .homebanner .grid {
   display: grid;
@@ -708,11 +716,13 @@ form button[type=submit]:hover {
   }
 }
 .homepage .featured-banner {
-  padding-top: 40px;
+  padding-top: 120px;
+  padding-bottom: 80px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 640px) {
   .homepage .featured-banner {
-    margin-top: 120px;
+    padding-top: 60px;
+    padding-bottom: 0px;
   }
 }
 .homepage .featured-banner .title {

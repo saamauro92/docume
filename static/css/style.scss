@@ -85,10 +85,16 @@ p {
 }
 
 body {
-  background-color: $body;
   font-family: Inter, sans-serif;
   color: $white;
-
+  background: rgb(86, 86, 86);
+  background: linear-gradient(
+    90deg,
+    rgba(86, 86, 86, 1) 0%,
+    rgba(59, 59, 59, 1) 18%,
+    rgba(41, 41, 41, 1) 48%,
+    rgba(31, 31, 31, 1) 70%
+  );
   .navbar {
     display: grid;
     grid-template-columns: 8fr 4fr;
@@ -409,10 +415,16 @@ form {
 .homepage {
   padding: 0;
   .homebanner {
-    height: 70vh;
+    height: 60vh;
+    padding-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include medium-down {
+      height: 70vh;
+      padding-bottom: 80px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -455,9 +467,11 @@ form {
   }
 
   .featured-banner {
-    padding-top: 40px;
-    @include medium-down {
-      margin-top: 120px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    @include small-down {
+      padding-top: 60px;
+      padding-bottom: 0px;
     }
 
     .title {
