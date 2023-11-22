@@ -5,13 +5,13 @@
 <div class="profile-page container">
   <section class="profile">
     <div class="profile-grid">
-      <div class="content-section">
+      <div class="content-section richtext">
         <h1 class="profile-title">{{ user_profile.user }}</h1>
         <p>{{ user_profile.name }}</p>
         <p>{{ user_profile.email }}</p>
         <p>{{ user_profile.title }}</p>
         <span>Birthdate: {{ user_profile.birth_date }} </span>
-        <div class="bio">{{ user_profile.bio|safe }}</div>
+        <div class="bio richtext">{{ user_profile.bio|safe }}</div>
       </div>
       <div class="image-container">
         {% autoescape off %} {% endautoescape %} 

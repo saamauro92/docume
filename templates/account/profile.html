@@ -34,7 +34,7 @@
         <p>{{ profile.email }}</p>
         <p>{{ profile.title }}</p>
         <span>Birthdate: {{ profile.birth_date }} </span>
-        <div class="bio">{{ profile.bio|safe }}</div>
+        <div class="bio richtext">{{ profile.bio|safe }}</div>
       </div>
       <div class="image-container">
         {% autoescape off %} {% endautoescape %} 
