@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="image-container">
-        <img src="https://res.cloudinary.com/dtycp96d8/image/upload/v1700431464/image-homebanner_qufedj.png" />
+        <img src="https://res.cloudinary.com/dtycp96d8/image/upload/v1700431464/image-homebanner_qufedj.png" alt="home banner code image"/>
       </div>
     </div>
   </section>
@@ -43,19 +43,19 @@
         and share them with the world
       </p>
       <div class="featureds-container">
-        <h4 class="container">Latests</h4>
+        <h3 class="container">Latests</h3>
         {% for post in docpost_list %} {% if forloop.counter <= 5 %}
   
         <div class="featured-card">
           <a
             href="{% url 'docpost_detail' post.slug  %}"
             class="featured-card-inner"
-            aria-label="Go to {{ post.title }}"
+            aria-label="Go to {{ post.title }} {{post.created_on }}  by {{ post.author }} "
             >
               <p class="card-title">{{ post.title }}</p>
               <p class="card-date">{{post.created_on|date:"D d M Y"}}</p>
               <div class="card-bottom">
-                <span> by</span>   <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ post.author }}</a>
+                <span> by</span>   <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors  {{ post.author }} profile page">{{ post.author }}</a>
               </div>
   
           </a>

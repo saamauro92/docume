@@ -36,7 +36,7 @@
             <p class="excerpt richtext"> {{ docpost.excerpt }} </p>
         </div>
         <div>
-            <a href="{% url 'public_profile' username=docpost.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ docpost.author }}</a>
+            <a href="{% url 'public_profile' username=docpost.author %}" class="user-tag"  aria-label="Rediect to authors profile {{ docpost.author }} page">{{ docpost.author }}</a>
         </div>
         <a href="{% url 'add_to_favorites' docpost.id %}" class="add-favourites">
         <i class="fas fa-bookmark"></i>Add to Favorites</a>   

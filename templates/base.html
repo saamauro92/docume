@@ -1,7 +1,7 @@
 {% load static %} {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
-<html>
+<html lang="eng">
   <head>
     <title>{% block title %}DocuMe{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,6 +19,14 @@
       type="text/javascript"
       src="{% static 'django_summernote/summernote-bs4.js' %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+    name="description"
+    content="DocuMe is a documentation/blog designed for users that would like to have a convenient platform to store and manage their code snippets and or any documentation."
+  >
+  <meta
+    name="keywords"
+    content="blog, documentation, docume"
+  >
     <link
       rel="stylesheet"
       type="text/css"
@@ -88,9 +96,9 @@
 
       <button
         type="button"
+        className="menu-button"
         aria-expanded="false"
         aria-label="menu burguer"
-        className="menu-button"
         onclick="toggleMenu()">
         <i class="fas fa-bars" style="color: #ffffff;"></i>
       </button>

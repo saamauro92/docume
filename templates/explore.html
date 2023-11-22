@@ -13,7 +13,7 @@
                 <p class="card-date">{{ post.created_on|date:"D d M Y" }}</p>
               </a>
               <div class="card-bottom">
-                <span> by</span>   <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ post.author }}</a>
+                <span> by</span>   <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors {{ post.author }} profile page">{{ post.author }}</a>
               </div>
             </div>
           {% endif %}
@@ -29,7 +29,7 @@
                 <div class="intro">
                   <h4 class="card-title">{{ post.title }}</h4>
                   <p class="card-text">{{ post.excerpt }}</p>
-                <span> {{ post.created_on }}</span> <span> by</span>  <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors profile page">{{ post.author }}</a>
+                <span> {{ post.created_on }}</span> <span> by</span>  <a href="{% url 'public_profile' username=post.author %}" class="user-tag"  aria-label="Rediect to authors {{ post.author }} profile page">{{ post.author }}</a>
                 </div>
               </a>
             </div>
