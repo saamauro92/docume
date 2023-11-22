@@ -239,6 +239,9 @@ Designs
  to write README
 
 ## Testing
+### Lighthouse 
+![lighthouse](https://github.com/saamauro92/docume/raw/main/readme/lighthouse.png)
+
 
 
 ### Manual testing
