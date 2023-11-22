@@ -15,10 +15,10 @@
 ## Table of Contents
 
   
-- [Wireframes](#wireframes)
 
 - [User stories](#user-stories)
 
+- [Wireframes](#wireframes)
   
 
 - [Features Section](#features-section)
@@ -29,6 +29,7 @@
    - [Profile (Authenticated only) ](#profile-section)
    - [Docs (Authenticated only)](#docs-section)
    - [Favourites (Authenticated only)](#favourites-section)
+   - [Public Profile](#public-profile)
 
 
 
@@ -165,6 +166,11 @@ As a Site User I can **create, read, update and delete documentation ** so that 
 
  ![favourites](https://github.com/saamauro92/docume/raw/main/readme/favourites-section.png)
 
+#####   Public Profile 
+ 
+- This section will display the user's profile information and a placeholder image if no image was added. 
+
+ ![public-profile](https://github.com/saamauro92/docume/raw/main/readme/public-profile.png)
 
 
 #### Features Left to Implement
